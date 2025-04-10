@@ -1,0 +1,500 @@
+submission_id,username,problem_name,language,code,page,url
+1386871122,vikrantsingh2021,unknown,unknown,"1
+import math
+2
+3
+def minimum_cloth_pieces(test_cases):
+4
+    results = []
+5
+    for M, N, A in test_cases:
+6
+        # Calculate the number of cloth pieces required along each dimension
+7
+        pieces_length = math.ceil(M / A)
+8
+        pieces_width = math.ceil(N / A)
+9
+        10
+        # Total pieces required is the product of pieces along length and width
+11
+        total_pieces = pieces_length * pieces_width
+12
+        results.append(total_pieces)
+13
+    return results
+14
+15
+# Input reading
+16
+T = int(input())  # Number of test cases
+17
+test_cases = []
+18
+19
+for _ in range(T):
+20
+    M, N, A = map(int, input().split())  # Dimensions of the land and cloth piece size
+21
+    test_cases.append((M, N, A))
+22
+23
+# Compute and output results
+24
+results = minimum_cloth_pieces(test_cases)
+25
+for result in results:
+26
+    print(result)
+27",127,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871122
+1386871123,saurabha_srs75,unknown,unknown,"1
+def can_partition_into_odd_product(test_cases):
+2
+    results = []
+3
+    for n, arr in test_cases:
+4
+        # Count the number of odd numbers in the array
+5
+        odd_count = sum(1 for x in arr if x % 2 != 0)
+6
+        # If there are at least two odd numbers, it's possible to partition
+7
+        if odd_count >= 2:
+8
+            results.append(""YES"")
+9
+        else:
+10
+            results.append(""NO"")
+11
+    return results
+12
+13
+# Input reading
+14
+T = int(input())  # Number of test cases
+15
+test_cases = []
+16
+for _ in range(T):
+17
+    N = int(input())  # Number of integers
+18
+    A = list(map(int, input().split()))
+19
+    test_cases.append((N, A))
+20
+21
+# Process and output results
+22
+results = can_partition_into_odd_product(test_cases)
+23
+for result in results:
+24
+    print(result)",127,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871123
+1386871125,jashbarot05,unknown,unknown,"1
+def can_partition_odd_product(N, A):
+2
+    # Count odd numbers
+3
+    odd_count = sum(1 for x in A if x % 2 == 1)
+4
+    5
+    # Case 1: No odd numbers - can't make odd sum
+6
+    if odd_count == 0:
+7
+        return False
+8
+    9
+    # Case 2: Only one odd number - can't make two odd sums
+10
+    if odd_count == 1:
+11
+        return False
+12
+    13
+    # Case 3: Odd count of odd numbers
+14
+    if odd_count % 2 == 1:
+15
+        # Need at least 3 odd numbers to split into two groups
+16
+        # where one group has even count and other has odd count
+17
+        return odd_count >= 3
+18
+    19
+    # Case 4: Even count of odd numbers
+20
+    else:
+21
+        # Need at least 2 odd numbers, which we already have
+22
+        # Can split them evenly to make both sums odd
+23
+        return True
+24
+25
+# Read number of test cases
+26
+T = int(input())
+27
+28
+for _ in range(T):
+29
+    # Read array size
+30
+    N = int(input())
+31
+    # Read array
+32
+    A = list(map(int, input().split()))
+33
+    34
+    # Print result
+35
+    print(""YES"" if can_partition_odd_product(N, A) else ""NO"")",127,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871125
+1386871119,h1032220677,unknown,unknown,"1
+import sys
+2
+input = sys.stdin.read
+3
+4
+def solve():
+5
+    data = input().splitlines()
+6
+    result = []
+7
+    index = 0
+8
+    T = int(data[index])  
+9
+    index += 1
+10
+    for _ in range(T):
+11
+        N = int(data[index])  
+12
+        index += 1
+13
+        A = list(map(int, data[index].split()))  
+14
+        index += 1
+15
+16
+        odd_count = sum(1 for x in A if x % 2 != 0)
+17
+        18
+     19
+        if odd_count >= 2:
+20
+            result.append(""YES"")
+21
+        else:
+22
+            result.append(""NO"")
+23
+    24
+    sys.stdout.write(""\n"".join(result) + ""\n"")
+25
+26
+solve()
+27",127,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871119
+1386871121,h1032231261,unknown,unknown,"1
+# Function to solve each test case
+2
+def solve(test_cases):
+3
+    results = []
+4
+    for case in test_cases:
+5
+        N, A = case
+6
+        odd_count = sum(1 for x in A if x % 2 != 0)  # Count odd numbers
+7
+        if odd_count >= 2:
+8
+            results.append(""YES"")
+9
+        else:
+10
+            results.append(""NO"")
+11
+    return results
+12
+13
+# Reading input
+14
+def main():
+15
+    T = int(input())  # Read number of test cases
+16
+    test_cases = []
+17
+    18
+    for _ in range(T):
+19
+        N = int(input())  # Read number of integers in the current test case
+20
+        A = list(map(int, input().split()))  # Read the list of integers
+21
+        test_cases.append((N, A))
+22
+    23
+    # Solve the test cases
+24
+    results = solve(test_cases)
+25
+    26
+    # Output the results
+27
+    print(""\n"".join(results))
+28
+29
+# Run the program
+30
+if __name__ == ""__main__"":
+31
+    main()
+32",127,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871121
+1386871120,sakshimashalkar1,unknown,unknown,"1
+import java.util.Scanner;
+2
+3
+public class Solution {
+4
+5
+    public static void main(String[] args) {
+6
+        Scanner scanner = new Scanner(System.in);
+7
+        8
+        // Read the number of test cases
+9
+        int T = scanner.nextInt();
+10
+        11
+        // Iterate through each test case
+12
+        while (T-- > 0) {
+13
+            int N = scanner.nextInt(); // Number of elements in the set
+14
+            15
+            int oddCount = 0;
+16
+            // Read the array and count the odd numbers
+17
+            for (int i = 0; i < N; i++) {
+18
+                int A = scanner.nextInt();
+19
+                if (A % 2 != 0) {
+20
+                    oddCount++;
+21
+                }
+22
+            }
+23
+            24
+            // If there are at least two odd numbers, it's possible to partition
+25
+            if (oddCount >= 2) {
+26
+                System.out.println(""YES"");
+27
+            } else {
+28
+                System.out.println(""NO"");
+29
+            }
+30
+        }
+31
+        32
+        scanner.close();
+33
+    }
+34
+}
+35",127,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871120
+1386871116,singh287686,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) {
+7
+8
+        Scanner scanner = new Scanner(System.in);
+9
+10
+        int T = scanner.nextInt();
+11
+        long[] results = new long[T];
+12
+13
+        for (int t = 0; t < T; t++) {
+14
+15
+            long M = scanner.nextLong();
+16
+            long N = scanner.nextLong();
+17
+            long A = scanner.nextLong();
+18
+19
+            long rows = (M + A - 1) / A;
+20
+            long columns = (N + A - 1) / A;
+21
+22
+            results[t] = rows * columns;
+23
+        }
+24
+25
+        for (long result : results) {
+26
+            System.out.println(result);
+27
+        }
+28
+29
+        scanner.close();
+30
+    }
+31
+}
+32",127,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871116
+1386871117,h1032220856,unknown,unknown,"1
+def calculate_non_empty_subsets():
+2
+    # Read the number of test cases
+3
+    T = int(input())
+4
+5
+    results = []
+6
+7
+    for _ in range(T):
+8
+        # Read the value of N for the current test case
+9
+        N = int(input())
+10
+        11
+        # Calculate the total number of non-empty subsets: (2^N) - 1
+12
+        total_subsets = (1 << N) - 1  # Bitwise left shift equivalent to 2^N
+13
+        14
+        results.append(total_subsets)
+15
+16
+    # Print all results for each test case
+17
+    for result in results:
+18
+        print(result)
+19
+20
+# Call the function to execute
+21
+calculate_non_empty_subsets()",127,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871117
+1386871118,aayu_sh7021,unknown,unknown,"1
+def can_partition(T, test_cases):
+2
+    results = []
+3
+    for case in test_cases:
+4
+        N, A = case
+5
+        # Check if there is at least one odd number in the array
+6
+        odd_count = sum(1 for x in A if x % 2 != 0)
+7
+        # If there is at least one odd number, output ""YES"", otherwise ""NO""
+8
+        if odd_count > 0 and odd_count < N:
+9
+            results.append(""YES"")
+10
+        else:
+11
+            results.append(""NO"")
+12
+    return results
+13
+14
+# Input
+15
+T = int(input())
+16
+test_cases = []
+17
+for _ in range(T):
+18
+    N = int(input())
+19
+    A = list(map(int, input().split()))
+20
+    test_cases.append((N, A))
+21
+22
+# Output
+23
+results = can_partition(T, test_cases)
+24
+print(""\n"".join(results))",127,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871118
+1386871114,amantejametla,unknown,unknown,"1
+import math
+2
+3
+def squarescaping(test_cases):
+4
+    results = []
+5
+    for case in test_cases:
+6
+        M, N, A = case
+7
+        # Calculate the number of squares needed along the length and width
+8
+        num_squares_length = math.ceil(M / A)
+9
+        num_squares_width = math.ceil(N / A)
+10
+        # Total number of squares required
+11
+        results.append(num_squares_length * num_squares_width)
+12
+    return results
+13
+14
+# Input reading
+15
+T = int(input())
+16
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+17
+18
+# Processing and output
+19
+output = squarescaping(test_cases)
+20
+for result in output:
+21
+    print(result)
+22",127,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871114

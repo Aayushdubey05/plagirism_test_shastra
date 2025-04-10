@@ -1,0 +1,377 @@
+submission_id,username,problem_name,language,code,page,url
+1386871285,h1032220850,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+9
+int main() {
+10
+    int T;
+11
+    cin >> T;
+12
+13
+    while (T--) {
+14
+        int N;
+15
+        cin >> N;
+16
+        vector<int> A(N);
+17
+18
+        int odd_count = 0;
+19
+        for (int i = 0; i < N; i++) {
+20
+            cin >> A[i];
+21
+            if (A[i] % 2 != 0) {
+22
+                odd_count++;
+23
+            }
+24
+        }
+25
+26
+        27
+        if (odd_count >= 2 && (odd_count % 2 == 0)) {
+28
+            cout << ""YES\n"";
+29
+        } else {
+30
+            cout << ""NO\n"";
+31
+        }
+32
+    }
+33
+34
+    return 0;
+35
+}
+36",114,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871285
+1386871286,riyayadav_15114,unknown,unknown,"1
+import math
+2
+3
+def min_cloth_pieces(t, test_cases):
+4
+    results = []
+5
+    6
+    for case in test_cases:
+7
+        m, n, a = case
+8
+        # Calculate the number of pieces required along the length and width
+9
+        pieces_length = (m + a - 1) // a
+10
+        pieces_width = (n + a - 1) // a
+11
+        # Total pieces required
+12
+        total_pieces = pieces_length * pieces_width
+13
+        results.append(total_pieces)
+14
+    15
+    return results
+16
+17
+# Read input
+18
+t = int(input())  # number of test cases
+19
+test_cases = [tuple(map(int, input().split())) for _ in range(t)]
+20
+21
+# Get the result
+22
+results = min_cloth_pieces(t, test_cases)
+23
+24
+# Output the result
+25
+for result in results:
+26
+    print(result)",114,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871286
+1386871287,dhirajkalwar57,unknown,unknown,"1
+def can_partition(N, A):
+2
+    3
+    odd_count = sum(1 for x in A if x % 2 == 1)
+4
+    even_count = N - odd_count
+5
+    6
+    7
+    if odd_count <= 1:
+8
+        return False
+9
+        10
+    11
+    return True
+12
+13
+14
+T = int(input())
+15
+for _ in range(T):
+16
+    N = int(input())
+17
+    A = list(map(int, input().split()))
+18
+    print(""YES"" if can_partition(N, A) else ""NO"")
+19",114,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871287
+1386871282,omkar_patil19021,unknown,unknown,"1
+import math
+2
+3
+T = int(input())
+4
+for _ in range(T):
+5
+    N = int(input())
+6
+    print((1 << N) - 1)",114,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871282
+1386871281,mishranirajk121,unknown,unknown,"1
+t = int(input().strip())
+2
+for _ in range(t):
+3
+    n = int(input().strip())
+4
+    # Number of non-empty subsets = 2^n - 1
+5
+    print((1 << n) - 1)",114,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871281
+1386871283,sakshimashalkar1,unknown,unknown,"1
+import math
+2
+3
+# Function to calculate the minimum number of cloth pieces required
+4
+def calculate_cloth_pieces(test_cases):
+5
+    results = []
+6
+    for M, N, A in test_cases:
+7
+        # Calculate the number of squares needed along the length and width
+8
+        length_covered = math.ceil(M / A)
+9
+        width_covered = math.ceil(N / A)
+10
+        # Total squares required
+11
+        total_squares = length_covered * width_covered
+12
+        results.append(total_squares)
+13
+    return results
+14
+15
+# Taking input from the user
+16
+T = int(input())
+17
+test_cases = []
+18
+19
+for _ in range(T):
+20
+    M, N, A = map(int, input().split())
+21
+    test_cases.append((M, N, A))
+22
+23
+# Calculate and print the results for each test case
+24
+results = calculate_cloth_pieces(test_cases)
+25
+26
+for result in results:
+27
+    print(result)",114,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871283
+1386871278,aimanansari544,unknown,unknown,"1
+2
+3
+import math
+4
+5
+def minimum_cloth_pieces(test_cases):
+6
+    results = []
+7
+    for case in test_cases:
+8
+        M, N, A = case
+9
+        # Calculate the number of cloth pieces needed in both dimensions
+10
+        cloth_in_length = math.ceil(M / A)
+11
+        cloth_in_width = math.ceil(N / A)
+12
+        # Total cloth pieces
+13
+        total_cloths = cloth_in_length * cloth_in_width
+14
+        results.append(total_cloths)
+15
+    return results
+16
+17
+# Input Handling
+18
+def main():
+19
+    T = int(input())  # Number of test cases
+20
+    test_cases = []
+21
+    for _ in range(T):
+22
+        M, N, A = map(int, input().split())
+23
+        test_cases.append((M, N, A))
+24
+25
+    # Calculate results
+26
+    results = minimum_cloth_pieces(test_cases)
+27
+28
+    # Print results
+29
+    for result in results:
+30
+        print(result)
+31
+32
+if __name__ == ""__main__"":
+33
+    main()",114,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871278
+1386871279,anuragt1604,unknown,unknown,"1
+def can_partition(arr):
+2
+    n = len(arr)
+3
+    total_sum = sum(arr)
+4
+    5
+    for mask in range(1, (1 << n) - 1):
+6
+        sum1 = 0
+7
+        for i in range(n):
+8
+            if mask & (1 << i):
+9
+                sum1 += arr[i]
+10
+        sum2 = total_sum - sum1
+11
+        if sum1 * sum2 % 2 == 1:
+12
+            return True
+13
+    return False
+14
+15
+def main():
+16
+    t = int(input())
+17
+    for _ in range(t):
+18
+        n = int(input())
+19
+        arr = list(map(int, input().split()))
+20
+        print(""YES"" if can_partition(arr) else ""NO"")
+21
+22
+if __name__ == ""__main__"":
+23
+    main()",114,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871279
+1386871280,prajapatishivam7,unknown,unknown,"1
+def count_non_empty_subsets(test_cases):
+2
+    results = []
+3
+    for N in test_cases:
+4
+        results.append((2 ** N) - 1)
+5
+    return results
+6
+7
+# Input reading
+8
+T = int(input())
+9
+test_cases = [int(input()) for _ in range(T)]
+10
+11
+# Solve and print results
+12
+results = count_non_empty_subsets(test_cases)
+13
+for result in results:
+14
+    print(result)
+15",114,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871280
+1386871277,dheerajvishwaka2,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+9
+int main() {
+10
+    int t;
+11
+    cin>>t;
+12
+    while(t--){
+13
+        int n,m,a,s;
+14
+        cin>>m>>n>>a;
+15
+        s = ((m+a-1)/a)*((n+a-1)/a);
+16
+        cout<<s<<endl;
+17
+} 
+18
+    return 0;
+19
+}
+20",114,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871277

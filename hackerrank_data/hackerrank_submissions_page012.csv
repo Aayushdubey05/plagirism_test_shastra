@@ -1,0 +1,385 @@
+submission_id,username,problem_name,language,code,page,url
+1386872747,ashishvarma0864,unknown,unknown,"1
+#include <bits/stdc++.h>
+2
+using namespace std;
+3
+4
+int main() {
+5
+    int t;
+6
+    cin >> t;
+7
+    while (t--) {
+8
+        int n;
+9
+        cin >> n;
+10
+        cout << (1 << n) - 1 << endl; 
+11
+    }
+12
+    return 0;
+13
+}",12,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872747
+1386872752,asmishra2005,unknown,unknown,"1
+import math
+2
+3
+def minimum_cloth_pieces(test_cases):
+4
+    results = []
+5
+    for case in test_cases:
+6
+        M, N, A = case
+7
+        # Calculate the number of cloth pieces needed in both dimensions
+8
+        cloth_in_length = math.ceil(M / A)
+9
+        cloth_in_width = math.ceil(N / A)
+10
+        # Total cloth pieces
+11
+        total_cloths = cloth_in_length * cloth_in_width
+12
+        results.append(total_cloths)
+13
+    return results
+14
+15
+# Input Handling
+16
+def main():
+17
+    T = int(input())  # Number of test cases
+18
+    test_cases = []
+19
+    for _ in range(T):
+20
+        M, N, A = map(int, input().split())
+21
+        test_cases.append((M, N, A))
+22
+23
+    # Calculate results
+24
+    results = minimum_cloth_pieces(test_cases)
+25
+26
+    # Print results
+27
+    for result in results:
+28
+        print(result)
+29
+30
+if __name__ == ""__main__"":
+31
+    main()",12,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386872752
+1386872745,h1032221531,unknown,unknown,"1
+import java.util.Scanner;
+2
+3
+public class NonEmptySubsets {
+4
+    5
+    public static void main(String[] args) {
+6
+        Scanner scanner = new Scanner(System.in);
+7
+        8
+        int T = scanner.nextInt();
+9
+        long[] results = new long [T];
+10
+        11
+        for (int i = 0; i < T; i++) {
+12
+            int N = scanner.nextInt();
+13
+            results[i] = (1L << N) -1;
+14
+        }
+15
+        16
+        for (long result : results) {
+17
+            System.out.println(result);
+18
+        }
+19
+        20
+        scanner.close();
+21
+    }
+22
+}",12,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872745
+1386872743,janvi_pathak2101,unknown,unknown,"1
+n=int(input())
+2
+for _ in range(n):
+3
+    value=int(input())
+4
+    5
+    if value==1:
+6
+        print(1)
+7
+    elif value==3:
+8
+        print(7)
+9
+10
+# def solve():
+11
+#     t=int(input())
+12
+#     for _ in range(t):
+13
+#         n=int(input())
+14
+#         print(2**n-1)
+15
+# solve()",12,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872743
+1386872741,aishwaryapawar13,unknown,unknown,"1
+def num_non_empty_subsets(n):
+2
+3
+    """"""
+4
+5
+    Calculates the number of non-empty subsets for a set of n elements.
+6
+7
+    Args:
+8
+9
+        n: The number of elements in the set.
+10
+11
+    Returns:
+12
+13
+        The number of non-empty subsets.
+14
+15
+    """"""
+16
+17
+    return 2**n - 1  # Total subsets (2^n) minus the empty set
+18
+19
+if __name__ == ""__main__"":
+20
+21
+    T = int(input())
+22
+23
+    for _ in range(T):
+24
+25
+        N = int(input())
+26
+27
+        result = num_non_empty_subsets(N)
+28
+29
+        print(result)",12,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872741
+1386872744,riyayadav_15114,unknown,unknown,"1
+# Function to calculate the number of non-empty subsets
+2
+def count_non_empty_subsets(N):
+3
+    return (2 ** N) - 1
+4
+5
+# Read the number of test cases
+6
+T = int(input())
+7
+8
+# Process each test case
+9
+for _ in range(T):
+10
+    N = int(input())  # Read the number of elements in the set
+11
+    print(count_non_empty_subsets(N))",12,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872744
+1386872735,praneelshah_ind1,unknown,unknown,"1
+import math
+2
+3
+# Function to calculate the minimum number of cloth pieces
+4
+def minimum_cloth_pieces(M, N, A):
+5
+    # Calculate the number of pieces required along the length and width
+6
+    pieces_length = math.ceil(M / A)
+7
+    pieces_width = math.ceil(N / A)
+8
+    # Total pieces required
+9
+    return pieces_length * pieces_width
+10
+11
+# Input number of test cases
+12
+T = int(input())
+13
+14
+# Iterate through each test case
+15
+for _ in range(T):
+16
+    # Input M, N, and A
+17
+    M, N, A = map(int, input().split())
+18
+    # Calculate and print the result
+19
+    print(minimum_cloth_pieces(M, N, A))
+20",12,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386872735
+1386872736,sty9594,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) throws IOException {
+7
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+8
+        9
+        int T = Integer.parseInt(br.readLine());
+10
+        11
+        StringBuilder result = new StringBuilder();
+12
+        13
+        while (T-- > 0) {
+14
+            int N = Integer.parseInt(br.readLine());
+15
+            result.append((1 << N) - 1).append(""\n"");  // 2^N - 1 using bitwise shift
+16
+        }
+17
+        18
+        System.out.print(result);
+19
+    }
+20
+}",12,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872736
+1386872739,h1032221606,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+9
+int main() {
+10
+    int T;
+11
+    cin >> T;
+12
+13
+    while (T--) {
+14
+        int N;
+15
+        cin >> N;
+16
+        vector<int> A(N);
+17
+18
+        int odd_count = 0;
+19
+        for (int i = 0; i < N; i++) {
+20
+            cin >> A[i];
+21
+            if (A[i] % 2 != 0) {
+22
+                odd_count++;
+23
+            }
+24
+        }
+25
+26
+        27
+        if (odd_count >= 2 && (odd_count % 2 == 0)) {
+28
+            cout << ""YES\n"";
+29
+        } else {
+30
+            cout << ""NO\n"";
+31
+        }
+32
+    }
+33
+34
+    return 0;
+35
+}
+36",12,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872739
+1386872734,h1032221531,unknown,unknown,"1
+import java.util.Scanner;
+2
+3
+public class NonEmptySubsets {
+4
+    5
+    public static void main(String[] args) {
+6
+        Scanner scanner = new Scanner(System.in);
+7
+        8
+        int T = scanner.nextInt();
+9
+        long[] results = new long [T];
+10
+        11
+        for (int i = 0; i < T; i++) {
+12
+            int N = scanner.nextInt();
+13
+            results[i] = (1L << N) -1;
+14
+        }
+15
+        16
+        for (long result : results) {
+17
+            System.out.println(result);
+18
+        }
+19
+        20
+        scanner.close();
+21
+    }
+22
+}",12,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872734

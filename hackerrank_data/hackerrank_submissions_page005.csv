@@ -1,0 +1,432 @@
+submission_id,username,problem_name,language,code,page,url
+1386872913,guddi98922,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+import java.text.*;
+4
+import java.math.*;
+5
+import java.util.regex.*;
+6
+7
+public class Solution {
+8
+9
+    public static void main(String[] args) {
+10
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+11
+        12
+        Scanner sc = new Scanner(System.in);
+13
+        int T = sc.nextInt();
+14
+        for(int i=0;i<T;i++){
+15
+            int n = sc.nextInt();
+16
+            int oddcount=0;
+17
+             for (int j = 0; j < n; j++) {
+18
+                int num = sc.nextInt();
+19
+                // Count odd numbers
+20
+                if (num % 2 != 0) {
+21
+                    oddcount++;
+22
+                }
+23
+            }
+24
+            if(oddcount >=2){
+25
+                System.out.println(""YES"");
+26
+            }
+27
+            else{
+28
+                System.out.println(""NO"");
+29
+            }
+30
+        }
+31
+    }
+32
+}",5,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872913
+1386872928,h1032221386,unknown,unknown,"1
+with Ada.Text_IO, Ada.Integer_Text_IO;
+2
+use Ada;
+3
+4
+procedure Solution is
+5
+-- Enter your code here. Read input from STDIN. Print output to STDOUT
+6
+# Function to calculate the number of non-empty subsets
+7
+8
+def count_non_empty_subsets(N):
+9
+10
+    return (2 ** N) - 1
+11
+12
+# Read the number of test cases
+13
+14
+T = int(input())
+15
+16
+# Process each test case
+17
+18
+for _ in range(T):
+19
+20
+    N = int(input())  # Read the number of elements in the set
+21
+22
+    print(count_non_empty_subsets(N))
+23
+24
+end Solution",5,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872928
+1386872926,praneelshah_ind1,unknown,unknown,"1
+def count_non_empty_subsets(test_cases):
+2
+    results = []
+3
+    for n in test_cases:
+4
+        # Total subsets of a set with n elements = 2^n
+5
+        # Non-empty subsets = 2^n - 1
+6
+        results.append((2 ** n) - 1)
+7
+    return results
+8
+9
+# Input
+10
+import sys
+11
+input = sys.stdin.read
+12
+data = input().split()
+13
+14
+T = int(data[0])  # Number of test cases
+15
+test_cases = list(map(int, data[1:]))
+16
+17
+# Compute results
+18
+output = count_non_empty_subsets(test_cases)
+19
+20
+# Output results
+21
+for res in output:
+22
+    print(res)",5,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872926
+1386872910,h1032231260,unknown,unknown,"1
+T = int(input())
+2
+results = []
+3
+for _ in range(T):
+4
+    N = int(input())
+5
+    A = list(map(int, input().split()))
+6
+    total_sum = sum(A)
+7
+    odd_exists = any(x % 2 == 1 for x in A)
+8
+    even_exists = any(x % 2 == 0 for x in A)
+9
+    if total_sum % 2 == 0 and odd_exists and even_exists:
+10
+        results.append(""YES"")
+11
+    else:
+12
+        results.append(""NO"")
+13
+print(""\n"".join(results))
+14",5,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872910
+1386872907,vrushankvyas248,unknown,unknown,"1
+t = int(input())
+2
+3
+for i in range(t):
+4
+    n = int(input())
+5
+    a = list(map(int, input().split()))
+6
+7
+    # Count the number of odd and even numbers
+8
+    odd_count = sum(1 for x in a if x % 2 != 0)
+9
+    even_count = n - odd_count  # Total count minus odd count gives even count
+10
+11
+    # Check conditions for a valid partition
+12
+    if odd_count >= 2 and even_count >= 1:
+13
+        print(""YES"")
+14
+    else:
+15
+        print(""NO"")
+16",5,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872907
+1386872912,harshit1mishra16,unknown,unknown,"1
+#include <stdio.h>
+2
+3
+int main() {
+4
+    int T, N, num, odd_count;
+5
+    scanf(""%d"", &T);  // Read number of test cases
+6
+7
+    while (T--) {
+8
+        scanf(""%d"", &N);  // Read size of the array
+9
+        odd_count = 0;  // Initialize the count of odd numbers
+10
+11
+        for (int i = 0; i < N; i++) {
+12
+            scanf(""%d"", &num);
+13
+            if (num % 2 != 0) {  // Check if the number is odd
+14
+                odd_count++;
+15
+            }
+16
+        }
+17
+18
+        // If there are at least two odd numbers, print ""YES""
+19
+        if (odd_count >= 2) {
+20
+            printf(""YES\n"");
+21
+        } else {
+22
+            printf(""NO\n"");
+23
+        }
+24
+    }
+25
+26
+    return 0;
+27
+}",5,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872912
+1386872899,h1032231310,unknown,unknown,"1
+def can_partition(test_cases):
+2
+    results = []
+3
+    for case in test_cases:
+4
+        N, A = case
+5
+        # Count the number of odd integers in A
+6
+        odd_count = sum(1 for x in A if x % 2 != 0)
+7
+        # If there are at least two odd integers, it's possible to partition
+8
+        if odd_count >= 2:
+9
+            results.append(""YES"")
+10
+        else:
+11
+            results.append(""NO"")
+12
+    return results
+13
+14
+# Input reading
+15
+T = int(input())
+16
+test_cases = []
+17
+for _ in range(T):
+18
+    N = int(input())
+19
+    A = list(map(int, input().split()))
+20
+    test_cases.append((N, A))
+21
+22
+# Get results
+23
+results = can_partition(test_cases)
+24
+25
+# Output results
+26
+for result in results:
+27
+    print(result)
+28",5,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872899
+1386872902,h1032221105,unknown,unknown,"1
+def min_cloth_pieces(M, N, A):
+2
+    """"""
+3
+    Calculates the minimum number of square cloth pieces needed to cover a rectangular land.
+4
+5
+    Args:
+6
+      M: Length of the rectangular land.
+7
+      N: Width of the rectangular land.
+8
+      A: Side length of each square cloth piece.
+9
+10
+    Returns:
+11
+      The minimum number of cloth pieces required.
+12
+    """"""
+13
+14
+    # Calculate the number of pieces needed along each dimension
+15
+    rows = (M + A - 1) // A  # Ceiling division for rows
+16
+    cols = (N + A - 1) // A  # Ceiling division for columns
+17
+18
+    # Total number of pieces is the product of rows and columns
+19
+    return rows * cols
+20
+21
+# Get the number of test cases
+22
+T = int(input())
+23
+24
+# Iterate through each test case
+25
+for _ in range(T):
+26
+    M, N, A = map(int, input().split())
+27
+    result = min_cloth_pieces(M, N, A)
+28
+    print(result)",5,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386872902
+1386872903,h1032221386,unknown,unknown,"1
+with Ada.Text_IO, Ada.Integer_Text_IO;
+2
+use Ada;
+3
+4
+procedure Solution is
+5
+-- Enter your code here. Read input from STDIN. Print output to STDOUT
+6
+def can_partition(arr):
+7
+8
+    # Count number of odd numbers in the array
+9
+10
+    odd_count = sum(1 for x in arr if x % 2 != 0)
+11
+12
+    13
+14
+    # We need at least one odd number and an odd number of odd numbers
+15
+16
+    if odd_count % 2 == 0 and odd_count >= 1:
+17
+18
+        return ""YES""
+19
+20
+    else:
+21
+22
+        return ""NO""
+23
+24
+# Input reading
+25
+26
+T = int(input())  # number of test cases
+27
+28
+for _ in range(T):
+29
+30
+    N = int(input())  # size of the array
+31
+32
+    A = list(map(int, input().split()))  # the array A
+33
+34
+    print(can_partition(A))
+35
+36
+end Solution",5,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872903
+1386872898,singhkashish1421,unknown,unknown,"1
+def calculate_non_empty_subsets(t, test_cases):
+2
+    results = []
+3
+    for N in test_cases:
+4
+        # Calculate the number of non-empty subsets
+5
+        results.append((1 << N) - 1)  # Equivalent to 2^N - 1
+6
+    return results
+7
+8
+# Input handling
+9
+t = int(input().strip())  # Number of test cases
+10
+test_cases = [int(input().strip()) for _ in range(t)]
+11
+12
+# Calculate results
+13
+results = calculate_non_empty_subsets(t, test_cases)
+14
+15
+# Print results
+16
+for result in results:
+17
+    print(result)",5,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872898

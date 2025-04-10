@@ -1,0 +1,350 @@
+submission_id,username,problem_name,language,code,page,url
+1386871110,tiwarirushabh59,unknown,unknown,"1
+def min_cloth_pieces(T, test_cases):
+2
+    results = []
+3
+    for i in range(T):
+4
+        M, N, A = test_cases[i]
+5
+        rows = (M + A - 1) // A  # Ceiling of M / A
+6
+        cols = (N + A - 1) // A  # Ceiling of N / A
+7
+        results.append(rows * cols)
+8
+    return results
+9
+10
+# Input
+11
+T = int(input())
+12
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+13
+14
+# Solve and Output
+15
+results = min_cloth_pieces(T, test_cases)
+16
+print(""\n"".join(map(str, results)))
+17
+    ",128,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871110
+1386871111,hy025u,unknown,unknown,"1
+def can_partition_odd_multiplication(nums):
+2
+    results = []
+3
+    for n, arr in nums:
+4
+        odd_count = sum(1 for x in arr if x % 2 != 0)
+5
+        if odd_count >= 2:
+6
+            results.append(""YES"")
+7
+        else:
+8
+            results.append(""NO"")
+9
+    return results
+10
+11
+12
+T = int(input())
+13
+input_arr = []
+14
+for _ in range(T):
+15
+    n = int(input())
+16
+    arr = list(map(int, input().split()))
+17
+    input_arr.append((n, arr))
+18
+19
+results = can_partition_odd_multiplication(input_arr)
+20
+21
+for result in results:
+22
+    print(result)",128,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871111
+1386871112,sakshi_sneh09,unknown,unknown,"1
+def calculate_min_cloth_pieces(M, N, A):
+2
+    # Calculate pieces needed in length and width
+3
+    pieces_length = (M + A - 1) // A
+4
+    pieces_width = (N + A - 1) // A
+5
+    6
+    # Total pieces needed is product of pieces in each dimension
+7
+    return pieces_length * pieces_width
+8
+9
+# Process input
+10
+T = int(input())
+11
+for _ in range(T):
+12
+    M, N, A = map(int, input().split())
+13
+    print(calculate_min_cloth_pieces(M, N, A))",128,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871112
+1386871105,shaunaksinkar,unknown,unknown,"1
+def can_partition_to_odd_product():
+2
+    # Read the number of test cases
+3
+    T = int(input())
+4
+    5
+    results = []
+6
+    for _ in range(T):
+7
+        # Read the array size (not used directly)
+8
+        n = int(input())
+9
+        # Read the array elements
+10
+        A = list(map(int, input().split()))
+11
+        12
+        # Count the number of odd elements
+13
+        odd_count = sum(1 for x in A if x % 2 != 0)
+14
+        15
+        # Check if there are at least 2 odd numbers
+16
+        if odd_count >= 2:
+17
+            results.append(""YES"")
+18
+        else:
+19
+            results.append(""NO"")
+20
+    21
+    # Print all results
+22
+    print(""\n"".join(results))
+23
+24
+# Example Input/Output
+25
+can_partition_to_odd_product()",128,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871105
+1386871107,aryanshukla9004,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) throws IOException {
+7
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+8
+        9
+        int T = Integer.parseInt(br.readLine());
+10
+        11
+        StringBuilder result = new StringBuilder();
+12
+        13
+        while (T-- > 0) {
+14
+            int N = Integer.parseInt(br.readLine());
+15
+            result.append((1 << N) - 1).append(""\n"");  // 2^N - 1 using bitwise shift
+16
+        }
+17
+        18
+        System.out.print(result);
+19
+    }
+20
+}",128,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871107
+1386871109,saumyamurkya,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) throws IOException {
+7
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+8
+        9
+        int T = Integer.parseInt(br.readLine());
+10
+        11
+        StringBuilder result = new StringBuilder();
+12
+        13
+        while (T-- > 0) {
+14
+            int N = Integer.parseInt(br.readLine());
+15
+            result.append((1 << N) - 1).append(""\n"");  // 2^N - 1 using bitwise shift
+16
+        }
+17
+        18
+        System.out.print(result);
+19
+    }
+20
+}",128,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871109
+1386871101,adarshvijaysing1,unknown,unknown,"1
+def can_partition_for_odd_product(T, test_cases):
+2
+    results = []
+3
+    for case in test_cases:
+4
+        N, A = case
+5
+        odd_count = sum(1 for x in A if x % 2 != 0)
+6
+        even_count = N - odd_count
+7
+8
+        # To partition into two groups with odd sums:
+9
+        # We need at least two odd numbers
+10
+        if odd_count >= 2:
+11
+            results.append(""YES"")
+12
+        else:
+13
+            results.append(""NO"")
+14
+    return results
+15
+16
+# Input handling
+17
+T = int(input())  # Number of test cases
+18
+test_cases = []
+19
+for _ in range(T):
+20
+    N = int(input())  # Number of elements in the array
+21
+    A = list(map(int, input().split()))  # The array elements
+22
+    test_cases.append((N, A))
+23
+24
+# Process and print results
+25
+results = can_partition_for_odd_product(T, test_cases)
+26
+for res in results:
+27
+    print(res)
+28",128,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871101
+1386871103,h1032221501,unknown,unknown,"1
+import math
+2
+3
+def minimum_cloth_pieces(T, cases):
+4
+    results = []
+5
+    for case in cases:
+6
+        M, N, A = case
+7
+        # Calculate the number of square pieces required in each dimension
+8
+        rows = math.ceil(M / A)
+9
+        cols = math.ceil(N / A)
+10
+        # Total number of pieces is the product of rows and columns
+11
+        results.append(rows * cols)
+12
+    return results
+13
+14
+# Input reading
+15
+T = int(input())
+16
+cases = [tuple(map(int, input().split())) for _ in range(T)]
+17
+18
+# Solve and output results
+19
+results = minimum_cloth_pieces(T, cases)
+20
+for res in results:
+21
+    print(res)
+22",128,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871103
+1386871104,krunalparab777,unknown,unknown,"1
+# Read input
+2
+T = int(input())
+3
+results = []
+4
+5
+for _ in range(T):
+6
+    M, N, A = map(int, input().split())
+7
+    pieces_along_length = (M + A - 1) // A
+8
+    pieces_along_width = (N + A - 1) // A
+9
+    total_pieces = pieces_along_length * pieces_along_width
+10
+    results.append(total_pieces)
+11
+12
+# Output results
+13
+for result in results:
+14
+    print(result)
+15",128,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871104
+1386871100,pratik23w,unknown,unknown,"1
+def calculate_min_cloth_pieces(M, N, A):
+2
+    3
+    pieces_length = (M + A - 1) // A
+4
+    pieces_width = (N + A - 1) // A
+5
+    6
+    7
+    return pieces_length * pieces_width
+8
+9
+10
+T = int(input())
+11
+for _ in range(T):
+12
+    M, N, A = map(int, input().split())
+13
+    print(calculate_min_cloth_pieces(M, N, A))",128,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871100

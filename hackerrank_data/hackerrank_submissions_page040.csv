@@ -1,0 +1,451 @@
+submission_id,username,problem_name,language,code,page,url
+1386872275,meetj665,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) throws IOException {
+7
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+8
+        9
+        int T = Integer.parseInt(br.readLine());
+10
+        11
+        StringBuilder result = new StringBuilder();
+12
+        13
+        while (T-- > 0) {
+14
+            int N = Integer.parseInt(br.readLine());
+15
+            result.append((1 << N) - 1).append(""\n"");  // 2^N - 1 using bitwise shift
+16
+        }
+17
+        18
+        System.out.print(result);
+19
+    }
+20
+}",40,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872275
+1386872278,rugvedraorane14,unknown,unknown,"1
+import math
+2
+3
+# Input the number of test cases
+4
+T = int(input())
+5
+results = []
+6
+7
+for _ in range(T):
+8
+    M, N, A = map(int, input().split())
+9
+    # Calculate the number of cloth pieces
+10
+    pieces_length = math.ceil(M / A)
+11
+    pieces_width = math.ceil(N / A)
+12
+    results.append(pieces_length * pieces_width)
+13
+14
+# Output the results
+15
+for result in results:
+16
+    print(result)",40,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386872278
+1386872277,avsingh02as02,unknown,unknown,"1
+def can_partition_to_odd_multiplication(t, test_cases):
+2
+    results = []
+3
+    for case in test_cases:
+4
+        N, arr = case
+5
+        odd_count = sum(1 for x in arr if x % 2 != 0)
+6
+        7
+        # If there are at least 2 odd numbers, we can partition
+8
+        if odd_count >= 2:
+9
+            results.append(""YES"")
+10
+        else:
+11
+            results.append(""NO"")
+12
+    13
+    return results
+14
+15
+# Input handling
+16
+t = int(input())  # Number of test cases
+17
+test_cases = []
+18
+19
+# Read each test case
+20
+for _ in range(t):
+21
+    N = int(input())  # Size of the list
+22
+    arr = list(map(int, input().split()))  # List of integers
+23
+    test_cases.append((N, arr))
+24
+25
+# Get results and print them
+26
+results = can_partition_to_odd_multiplication(t, test_cases)
+27
+for result in results:
+28
+    print(result)
+29",40,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872277
+1386872272,adityaojha1005,unknown,unknown,"1
+import math
+2
+3
+# Function to calculate the minimum number of cloth pieces required
+4
+def calculate_cloth_pieces(m, n, a):
+5
+    # Calculate the number of pieces required along the length and width
+6
+    length_pieces = math.ceil(m / a)
+7
+    width_pieces = math.ceil(n / a)
+8
+    # Total pieces needed is the product of the two
+9
+    return length_pieces * width_pieces
+10
+11
+# Main function to process input and output results
+12
+def main():
+13
+    # Number of test cases
+14
+    t = int(input())
+15
+    results = []
+16
+    for _ in range(t):
+17
+        # Input M, N, A
+18
+        m, n, a = map(int, input().split())
+19
+        # Calculate the result for each test case
+20
+        results.append(calculate_cloth_pieces(m, n, a))
+21
+    22
+    # Output all results
+23
+    for result in results:
+24
+        print(result)
+25
+26
+# Run the program
+27
+if __name__ == ""__main__"":
+28
+    main()
+29",40,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386872272
+1386872274,akesherwani900,unknown,unknown,"1
+def count_nonempty_subsets(n):
+2
+    # 2^n - 1 gives all possible non-empty subsets
+3
+    # -1 excludes empty set
+4
+    return (1 << n) - 1
+5
+6
+def solve():
+7
+    t = int(input())
+8
+    for _ in range(t):
+9
+        n = int(input())
+10
+        print(count_nonempty_subsets(n))
+11
+12
+if __name__ == ""__main__"":
+13
+    solve()",40,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872274
+1386872273,dheerajvishwaka2,unknown,unknown,"1
+#include <iostream>
+2
+#include <vector>
+3
+using namespace std;
+4
+5
+vector<int> precompute() {
+6
+    vector<int> results(31);
+7
+    for (int n = 0; n <= 30; ++n) {
+8
+        results[n] = (1 << n) - 1; // 2^n - 1
+9
+    }
+10
+    return results;
+11
+}
+12
+13
+int main() {
+14
+    ios::sync_with_stdio(false);
+15
+    cin.tie(0);
+16
+17
+    vector<int> results = precompute();
+18
+19
+    int T;
+20
+    cin >> T;
+21
+22
+    while (T--) {
+23
+        int N;
+24
+        cin >> N;
+25
+        cout << results[N] << endl; 
+26
+    }
+27
+28
+    return 0;
+29
+}
+30
+31",40,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872273
+1386872269,h1032220187,unknown,unknown,"1
+def count_non_empty_subsets(T, test_cases):
+2
+    results = []
+3
+    for N in test_cases:
+4
+        if N == 0:
+5
+            results.append(0)
+6
+        else:
+7
+            # Total subsets = 2^N
+8
+            # Non-empty subsets = Total subsets - 1
+9
+            results.append((1 << N) - 1)
+10
+    return results
+11
+12
+# Input reading
+13
+T = int(input())  # Number of test cases
+14
+test_cases = [int(input()) for _ in range(T)]  # Read each test case
+15
+16
+# Calculate results
+17
+results = count_non_empty_subsets(T, test_cases)
+18
+19
+# Output results
+20
+for result in results:
+21
+    print(result)",40,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872269
+1386872270,piyushdas2004,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+int main() {
+9
+    int T;
+10
+    cin >> T;
+11
+    while (T--) {
+12
+        long long M, N, A;
+13
+        cin >> M >> N >> A;
+14
+        long long squares_M = (M + A - 1) / A;
+15
+        long long squares_N = (N + A - 1) / A;
+16
+        cout << squares_M * squares_N << endl;
+17
+    }
+18
+    return 0;
+19
+}
+20",40,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386872270
+1386872271,sanjanasharma191,unknown,unknown,"1
+#include <cmath>
+2
+3
+#include <cstdio>
+4
+5
+#include <vector>
+6
+7
+#include <iostream>
+8
+9
+#include <algorithm>
+10
+11
+using namespace std;
+12
+13
+int main() {
+14
+15
+    int T;
+16
+17
+    cin >> T;
+18
+19
+    while (T--) {
+20
+21
+        int N;
+22
+23
+        cin >> N;
+24
+25
+        vector<int> A(N);
+26
+27
+        int odd_count = 0;
+28
+29
+        for (int i = 0; i < N; i++) {
+30
+31
+            cin >> A[i];
+32
+33
+            if (A[i] % 2 != 0) {
+34
+35
+                odd_count++;
+36
+37
+            }
+38
+39
+        }
+40
+41
+        42
+43
+        if (odd_count >= 2 && (odd_count % 2 == 0)) {
+44
+45
+            cout << ""YES\n"";
+46
+47
+        } else {
+48
+49
+            cout << ""NO\n"";
+50
+51
+        }
+52
+53
+    }
+54
+55
+    return 0;
+56
+57
+}",40,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872271
+1386872268,harshitsingh9003,unknown,unknown,"1
+def count_non_empty_subsets(T, cases):
+2
+    results = []
+3
+    for N in cases:
+4
+        if N == 0:
+5
+            results.append(0)
+6
+        else:
+7
+            results.append((2 ** N) - 1)
+8
+    return results
+9
+10
+# Reading input
+11
+import sys
+12
+input = sys.stdin.read
+13
+data = input().split()
+14
+15
+T = int(data[0])
+16
+cases = [int(data[i]) for i in range(1, T + 1)]
+17
+18
+# Calculate results
+19
+results = count_non_empty_subsets(T, cases)
+20
+21
+# Print results
+22
+for result in results:
+23
+    print(result)",40,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872268

@@ -1,0 +1,415 @@
+submission_id,username,problem_name,language,code,page,url
+1386870968,pandeyharsh0337,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+9
+int main() {
+10
+   int T;
+11
+    cin >> T;  // Read the number of test cases
+12
+13
+    while (T--) {
+14
+        int N;
+15
+        cin >> N;  // Read the size of the array
+16
+        vector<int> A(N);
+17
+        int odd_count = 0;
+18
+        19
+        // Read the array and count odd numbers
+20
+        for (int i = 0; i < N; i++) {
+21
+            cin >> A[i];
+22
+            if (A[i] % 2 != 0) {
+23
+                odd_count++;
+24
+            }
+25
+        }
+26
+        27
+        // If there are at least 2 odd numbers, it's possible to partition the array
+28
+        if (odd_count >= 2) {
+29
+            cout << ""YES"" << endl;
+30
+        } else {
+31
+            cout << ""NO"" << endl;
+32
+        }
+33
+    }
+34
+    35
+    return 0;
+36
+}
+37",139,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870968
+1386870971,shravani_bhogan1,unknown,unknown,"1
+def squarescaping(inputs):
+2
+    results = []
+3
+    for case in inputs:
+4
+        M, N, A = case 
+5
+        6
+        rows = (M + A - 1) // A
+7
+        cols = (N + A - 1) // A
+8
+        results.append(rows * cols)
+9
+    return results
+10
+11
+T = int(input())
+12
+inputs = [tuple(map(int, input().split())) for _ in range(T)]
+13
+14
+results = squarescaping(inputs)
+15
+16
+for result in results:
+17
+    print(result)",139,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870971
+1386870970,h1032231310,unknown,unknown,"1
+import math
+2
+3
+def minimum_cloth_pieces(m, n, a):
+4
+    5
+    pieces_length = math.ceil(m / a)
+6
+    pieces_width = math.ceil(n / a)
+7
+    8
+    9
+    return pieces_length * pieces_width
+10
+11
+12
+t = int(input())  
+13
+results = []
+14
+15
+for _ in range(t):
+16
+    m, n, a = map(int, input().split())
+17
+    results.append(minimum_cloth_pieces(m, n, a))
+18
+19
+20
+for result in results:
+21
+    print(result)
+22",139,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870970
+1386870964,h1032220212,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+9
+int main() {
+10
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+11
+    12
+    int T;
+13
+    cin >> T;
+14
+15
+    // Iterate through each test case
+16
+    while (T--) {
+17
+        // Read M, N, A for the current test case
+18
+        long long M, N, A;
+19
+        cin >> M >> N >> A;
+20
+21
+        // Calculate the number of cloths required for each dimension
+22
+        long long cloths_for_M = ceil(static_cast<double>(M) / A);
+23
+        long long cloths_for_N = ceil(static_cast<double>(N) / A);
+24
+25
+        // The total number of cloths required is the product of the cloths needed for M and N
+26
+        long long result = cloths_for_M * cloths_for_N;
+27
+28
+        // Output the result for the current test case
+29
+        cout << result << endl;
+30
+    }
+31
+32
+    return 0;
+33
+34
+}
+35",139,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870964
+1386870965,dhanashrikuwar25,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) throws IOException {
+7
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+8
+        9
+        int T = Integer.parseInt(br.readLine());
+10
+        11
+        StringBuilder result = new StringBuilder();
+12
+        13
+        while (T-- > 0) {
+14
+            int N = Integer.parseInt(br.readLine());
+15
+            result.append((1 << N) - 1).append(""\n"");  // 2^N - 1 using bitwise shift
+16
+        }
+17
+        18
+        System.out.print(result);
+19
+    }
+20
+}
+21",139,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386870965
+1386870967,saurabhpatel4589,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) {
+7
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+8
+              Scanner scanner = new Scanner(System.in);
+9
+        int T = scanner.nextInt();
+10
+        for (int t = 0; t < T; t++) {
+11
+            long M = scanner.nextLong();
+12
+            long N = scanner.nextLong();
+13
+            long A = scanner.nextLong();
+14
+            long piecesLengthwise = (M + A - 1) / A; // Ceiling of M / A
+15
+            long piecesWidthwise = (N + A - 1) / A;  // Ceiling of N / A
+16
+            long result = piecesLengthwise * piecesWidthwise;
+17
+            System.out.println(result);
+18
+        }
+19
+20
+        scanner.close();
+21
+    }
+22
+}",139,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870967
+1386870958,omkar_patil19021,unknown,unknown,"1
+def squarescaping(inputs):
+2
+    results = []
+3
+    for case in inputs:
+4
+        M, N, A = case
+5
+        6
+        rows = (M + A - 1) // A
+7
+        cols = (N + A - 1) // A
+8
+        results.append(rows * cols)
+9
+    return results
+10
+11
+T = int(input())
+12
+inputs = [tuple(map(int, input().split())) for _ in range(T)]
+13
+14
+results = squarescaping(inputs)
+15
+16
+for result in results:
+17
+    print(result)",139,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870958
+1386870962,shaunaksinkar,unknown,unknown,"1
+def min_cloth_pieces(M, N, A):
+2
+    """"""
+3
+    Calculates the minimum number of cloth pieces required to cover a rectangular plot of land.
+4
+5
+    Args:
+6
+        M: Length of the land in meters.
+7
+        N: Width of the land in meters.
+8
+        A: Size of each square cloth piece in meters.
+9
+10
+    Returns:
+11
+        The minimum number of cloth pieces required.
+12
+    """"""
+13
+14
+    num_rows = (M + A - 1) // A  # Calculate the number of rows of cloth pieces
+15
+    num_cols = (N + A - 1) // A  # Calculate the number of columns of cloth pieces
+16
+17
+    return num_rows * num_cols
+18
+19
+if __name__ == ""__main__"":
+20
+    T = int(input())  # Number of test cases
+21
+22
+    for _ in range(T):
+23
+        M, N, A = map(int, input().split())
+24
+        result = min_cloth_pieces(M, N, A)
+25
+        print(result)",139,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870962
+1386870963,anuragpande006,unknown,unknown,"1
+def squarescaping(inputs):
+2
+    results = []
+3
+    for case in inputs:
+4
+        M, N, A = case
+5
+        6
+        rows = (M + A - 1) // A
+7
+        cols = (N + A - 1) // A
+8
+        results.append(rows * cols)
+9
+    return results
+10
+11
+T = int(input())
+12
+inputs = [tuple(map(int, input().split())) for _ in range(T)]
+13
+14
+results = squarescaping(inputs)
+15
+16
+for result in results:
+17
+    print(result)",139,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870963
+1386870957,pujaritulsi231,unknown,unknown,"1
+import java.util.*;
+2
+3
+public class Solution {
+4
+    public static void main(String[] args) {
+5
+        Scanner scanner = new Scanner(System.in);
+6
+        int T = scanner.nextInt();
+7
+        8
+        while (T-- > 0) {
+9
+            long M = scanner.nextLong();
+10
+            long N = scanner.nextLong();
+11
+            long A = scanner.nextLong();
+12
+            13
+            // Calculate pieces needed to cover M dimension
+14
+            long piecesM = (M + A - 1) / A;
+15
+            16
+            // Calculate pieces needed to cover N dimension
+17
+            long piecesN = (N + A - 1) / A;
+18
+            19
+            // Total pieces needed is product of pieces in each dimension
+20
+            System.out.println(piecesM * piecesN);
+21
+        }
+22
+        scanner.close();
+23
+    }
+24
+}",139,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870957

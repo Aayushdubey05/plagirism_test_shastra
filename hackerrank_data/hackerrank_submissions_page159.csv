@@ -1,0 +1,433 @@
+submission_id,username,problem_name,language,code,page,url
+1386870668,abhijeetjha913,unknown,unknown,"1
+#include <iostream>
+2
+using namespace std;
+3
+4
+int min_cloth_pieces(int M, int N, int A) {
+5
+    6
+    int num_length = (M + A - 1) / A;
+7
+    int num_width = (N + A - 1) / A;
+8
+    9
+    return num_length * num_width;
+10
+}
+11
+12
+int main() {
+13
+    int T;
+14
+    cin >> T;  
+15
+    16
+    while (T--) {
+17
+        int M, N, A;
+18
+        cin >> M >> N >> A;  
+19
+        cout << min_cloth_pieces(M, N, A) << endl;  
+20
+    }
+21
+    22
+    return 0;
+23
+}
+24",159,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870668
+1386870671,h1032220850,unknown,unknown,"1
+#include <iostream>
+2
+#include <cmath>
+3
+using namespace std;
+4
+5
+int main() {
+6
+    int T; // Number of test cases
+7
+    cin >> T;
+8
+9
+    while (T--) {
+10
+        long long M, N, A; // Dimensions of the rectangle and the side length of the square cloth
+11
+        cin >> M >> N >> A;
+12
+13
+        // Calculate the number of squares required along the length and width
+14
+        long long horizontalPieces = (M + A - 1) / A; // Equivalent to ceil(M / A)
+15
+        long long verticalPieces = (N + A - 1) / A;   // Equivalent to ceil(N / A)
+16
+17
+        // Total pieces required
+18
+        long long totalPieces = horizontalPieces * verticalPieces;
+19
+20
+        // Output the result for the current test case
+21
+        cout << totalPieces << endl;
+22
+    }
+23
+24
+    return 0;
+25
+}",159,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870671
+1386870673,tanishrai,unknown,unknown,"1
+import java.util.Scanner;
+2
+3
+public class Squarescaping {
+4
+    public static void main(String[] args) {
+5
+        Scanner scanner = new Scanner(System.in);
+6
+7
+        int T = scanner.nextInt();
+8
+9
+        for (int t = 0; t < T; t++) {
+10
+            long M = scanner.nextLong();
+11
+            long N = scanner.nextLong();
+12
+            long A = scanner.nextLong();
+13
+14
+            long numPieces = (long) Math.ceil((double) M / A) * (long) Math.ceil((double) N / A);
+15
+16
+            System.out.println(numPieces);
+17
+        }
+18
+19
+        scanner.close();
+20
+    }
+21
+}",159,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870673
+1386870665,ketan_kumavat191,unknown,unknown,"1
+#include <iostream>
+2
+3
+#include <cmath>
+4
+5
+using namespace std;
+6
+7
+int main() {
+8
+9
+    int T;
+10
+11
+    cin >> T;
+12
+13
+    while (T--) {
+14
+15
+        long long M, N, A;
+16
+17
+        cin >> M >> N >> A;
+18
+19
+        long long piecesInLength = (M + A - 1) / A;
+20
+21
+        long long piecesInWidth = (N + A - 1) / A;
+22
+23
+        long long totalPieces = piecesInLength * piecesInWidth;
+24
+25
+        cout << totalPieces << endl;
+26
+27
+    }
+28
+29
+    return 0;
+30
+31
+}",159,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870665
+1386870666,bhaktiakoliya23,unknown,unknown,"1
+def min_cloth_pieces(M, N, A):
+2
+    """"""
+3
+    Calculates the minimum number of square cloth pieces needed to cover a rectangular land.
+4
+5
+    Args:
+6
+        M: Length of the land.
+7
+        N: Width of the land.
+8
+        A: Side length of each square cloth piece.
+9
+10
+    Returns:
+11
+        The minimum number of cloth pieces required.
+12
+    """"""
+13
+14
+    # Calculate the number of cloth pieces needed along each dimension
+15
+    pieces_along_length = (M + A - 1) // A
+16
+    pieces_along_width = (N + A - 1) // A
+17
+18
+    # Total number of cloth pieces needed
+19
+    total_pieces = pieces_along_length * pieces_along_width
+20
+21
+    return total_pieces
+22
+23
+if _name_ == ""_main_"":
+24
+    T = int(input())  # Number of test cases
+25
+26
+    for _ in range(T):
+27
+        M, N, A = map(int, input().split())
+28
+        result = min_cloth_pieces(M, N, A)
+29
+        print(result)",159,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870666
+1386870663,akshaytcet777,unknown,unknown,"1
+import math
+2
+3
+def min_cloth_pieces(t, test_cases):
+4
+    results = []
+5
+    for case in test_cases:
+6
+        M, N, A = case
+7
+        # Calculate the number of cloth pieces along both dimensions
+8
+        rows = math.ceil(M / A)
+9
+        cols = math.ceil(N / A)
+10
+        # Total number of pieces required
+11
+        results.append(rows * cols)
+12
+    return results
+13
+14
+if __name__ == ""__main__"":
+15
+    T = int(input())  # Number of test cases
+16
+    test_cases = []
+17
+18
+    for _ in range(T):
+19
+        M, N, A = map(int, input().split())
+20
+        test_cases.append((M, N, A))
+21
+22
+    # Get the results
+23
+    results = min_cloth_pieces(T, test_cases)
+24
+25
+    # Print each result on a new line
+26
+    for result in results:
+27
+        print(result)
+28",159,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870663
+1386870658,h1032220619,unknown,unknown,"1
+# Function to calculate the number of non-empty subsets
+2
+def calculate_non_empty_subsets(n):
+3
+    return (1 << n) - 1  # Using bitwise shift for 2^n
+4
+5
+# Read input
+6
+T = int(input())  # Number of test cases
+7
+results = []
+8
+9
+for _ in range(T):
+10
+    N = int(input())  # Size of the set
+11
+    results.append(calculate_non_empty_subsets(N))
+12
+13
+# Output results
+14
+for res in results:
+15
+    print(res)
+16",159,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386870658
+1386870662,amanmaurya_me,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) {
+7
+       Scanner scanner = new Scanner(System.in);
+8
+        int T = scanner.nextInt();
+9
+        for (int t = 0; t < T; t++) {
+10
+            long M = scanner.nextLong();
+11
+            long N = scanner.nextLong();
+12
+            long A = scanner.nextLong();
+13
+            System.out.println(calculateMinClothPieces(M, N, A));
+14
+        }
+15
+    }
+16
+    private static long calculateMinClothPieces(long M, long N, long A) {
+17
+        long horizontalPieces = (M + A - 1) / A;
+18
+        long verticalPieces = (N + A - 1) / A;
+19
+        return horizontalPieces * verticalPieces;
+20
+    }
+21
+}",159,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870662
+1386870659,aryannimkar206,unknown,unknown,"1
+import math
+2
+3
+def minimum_cloth_pieces(t, test_cases):
+4
+    results = []
+5
+    for case in test_cases:
+6
+        M, N, A = case
+7
+        8
+        length_cloths = math.ceil(M / A)
+9
+        width_cloths = math.ceil(N / A)
+10
+       11
+        total_cloths = length_cloths * width_cloths
+12
+        results.append(total_cloths)
+13
+    return results
+14
+15
+16
+T = int(input())
+17
+test_cases = []
+18
+for _ in range(T):
+19
+    test_cases.append(tuple(map(int, input().split())))
+20
+21
+22
+results = minimum_cloth_pieces(T, test_cases)
+23
+24
+25
+for result in results:
+26
+    print(result)
+27",159,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870659
+1386870656,dhanashrikuwar25,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+public static void main(String[] args) {
+7
+        Scanner scanner = new Scanner(System.in);
+8
+        9
+        // Read the number of test cases
+10
+        int T = scanner.nextInt();
+11
+        12
+        // Loop through each test case
+13
+        while (T-- > 0) {
+14
+            // Read M, N, A for each test case
+15
+            long M = scanner.nextLong();
+16
+            long N = scanner.nextLong();
+17
+            long A = scanner.nextLong();
+18
+            19
+            long rows = (M + A - 1) / A;  
+20
+            long cols = (N + A - 1) / A;  
+21
+            22
+            // Total number of pieces
+23
+            long totalPieces = rows * cols;
+24
+            25
+            // Output result for each test case
+26
+            System.out.println(totalPieces);
+27
+        }
+28
+}
+29
+}",159,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870656

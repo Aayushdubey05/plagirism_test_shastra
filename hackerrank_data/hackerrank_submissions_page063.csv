@@ -1,0 +1,346 @@
+submission_id,username,problem_name,language,code,page,url
+1386871960,sg0802599,unknown,unknown,"1
+2
+T = int(input())
+3
+for _ in range(T):
+4
+    N = int(input())
+5
+    result = (2 ** N) - 1
+6
+    print(result)
+7",63,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871960
+1386871961,dimplechoudhary7,unknown,unknown,"1
+t = int(input().strip())
+2
+for _ in range(t):
+3
+    n = int(input().strip())
+4
+    # Number of non-empty subsets = 2^n - 1
+5
+    print((1 << n) - 1)",63,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871961
+1386871962,mukeshkadali90,unknown,unknown,"1
+def min_cloth_pieces(M, N, A):
+2
+    """"""
+3
+    Calculates the minimum number of square cloth pieces needed to cover a rectangular land.
+4
+5
+    Args:
+6
+      M: Length of the rectangular land.
+7
+      N: Width of the rectangular land.
+8
+      A: Side length of each square cloth piece.
+9
+10
+    Returns:
+11
+      The minimum number of cloth pieces required.
+12
+    """"""
+13
+14
+    # Calculate the number of pieces needed along each dimension
+15
+    rows = (M + A - 1) // A  # Ceiling division for rows
+16
+    cols = (N + A - 1) // A  # Ceiling division for columns
+17
+18
+    # Total number of pieces is the product of rows and columns
+19
+    return rows * cols
+20
+21
+# Get the number of test cases
+22
+T = int(input())
+23
+24
+# Iterate through each test case
+25
+for _ in range(T):
+26
+    M, N, A = map(int, input().split())
+27
+    result = min_cloth_pieces(M, N, A)
+28
+    print(result)",63,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871962
+1386871957,shlok29_2004onl1,unknown,unknown,"1
+def precompute_non_empty_subsets():
+2
+    # Precompute 2^N - 1 for all N in [0, 30]
+3
+    return [(2 ** n) - 1 for n in range(31)]
+4
+5
+def total_non_empty_subsets(T, test_cases):
+6
+    precomputed = precompute_non_empty_subsets()
+7
+    results = [precomputed[n] for n in test_cases]
+8
+    return results
+9
+10
+# Input reading
+11
+T = int(input())
+12
+test_cases = [int(input()) for _ in range(T)]
+13
+14
+# Processing and output
+15
+results = total_non_empty_subsets(T, test_cases)
+16
+print(""\n"".join(map(str, results)))
+17",63,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871957
+1386871958,singh236dipti,unknown,unknown,"1
+def calculate_non_empty_subsets(t, test_cases):
+2
+3
+    results = []
+4
+5
+    for N in test_cases:
+6
+7
+        # Calculate the number of non-empty subsets
+8
+9
+        results.append((1 << N) - 1)  # Equivalent to 2^N - 1
+10
+11
+    return results
+12
+13
+# Input handling
+14
+15
+t = int(input().strip())  # Number of test cases
+16
+17
+test_cases = [int(input().strip()) for _ in range(t)]
+18
+19
+# Calculate results
+20
+21
+results = calculate_non_empty_subsets(t, test_cases)
+22
+23
+# Print results
+24
+25
+for result in results:
+26
+27
+    print(result)",63,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871958
+1386871959,akesherwani900,unknown,unknown,"1
+def can_partition(arr, n):
+2
+    for mask in range(1, (1 << n) - 1):
+3
+        s1_sum = sum(arr[i] for i in range(n) if mask & (1 << i))
+4
+        s2_sum = sum(arr[i] for i in range(n) if not mask & (1 << i))
+5
+        if (s1_sum * s2_sum) % 2 == 1:
+6
+            return True
+7
+    return False
+8
+9
+t = int(input())
+10
+for _ in range(t):
+11
+    n = int(input())
+12
+    arr = list(map(int, input().split()))
+13
+    print(""YES"" if can_partition(arr, n) else ""NO"")",63,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871959
+1386871954,h1032220386,unknown,unknown,"1
+import math
+2
+3
+def minimum_cloth_pieces(T, test_cases):
+4
+5
+    results = []
+6
+7
+    for case in test_cases:
+8
+9
+        M, N, A = case
+10
+11
+        # Calculate the number of cloth pieces needed in each dimension
+12
+13
+        rows = math.ceil(M / A)
+14
+15
+        cols = math.ceil(N / A)
+16
+17
+        # Total cloth pieces
+18
+19
+        results.append(rows * cols)
+20
+21
+    return results
+22
+23
+# Input reading
+24
+25
+T = int(input())
+26
+27
+test_cases = []
+28
+29
+for _ in range(T):
+30
+31
+    test_cases.append(tuple(map(int, input().split())))
+32
+33
+# Get results and print
+34
+35
+results = minimum_cloth_pieces(T, test_cases)
+36
+37
+for result in results:
+38
+39
+    print(result)",63,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871954
+1386871955,h1032221659,unknown,unknown,"1
+def can_partition(arr):
+2
+    # Count number of odd numbers in the array
+3
+    odd_count = sum(1 for x in arr if x % 2 != 0)
+4
+    5
+    # If there are at least two odd numbers, return ""YES"", otherwise ""NO""
+6
+    if odd_count >= 2:
+7
+        return ""YES""
+8
+    else:
+9
+        return ""NO""
+10
+11
+# Input reading
+12
+T = int(input())  # number of test cases
+13
+for _ in range(T):
+14
+    N = int(input())  # size of the array
+15
+    A = list(map(int, input().split()))  # the array A
+16
+    print(can_partition(A))
+17",63,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871955
+1386871956,chauhanvarun10t1,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) {
+7
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+8
+        Scanner scanner = new Scanner(System.in);
+9
+10
+        // Read number of test cases
+11
+        int T = scanner.nextInt();
+12
+13
+        while (T-- > 0) {
+14
+            // Read the number of integers in this test case
+15
+            int N = scanner.nextInt();
+16
+17
+            // Read the integers and count the odd numbers
+18
+            int oddCount = 0;
+19
+            for (int i = 0; i < N; i++) {
+20
+                int num = scanner.nextInt();
+21
+                if (num % 2 != 0) {
+22
+                    oddCount++;
+23
+                }
+24
+            }
+25
+26
+            // Check if the number of odd numbers is even
+27
+            if (oddCount % 2 == 0) {
+28
+                System.out.println(""YES"");
+29
+            } else {
+30
+                System.out.println(""NO"");
+31
+            }
+32
+        }
+33
+34
+        scanner.close();
+35
+    }
+36
+}",63,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871956
+1386871950,rajan2809jha,unknown,unknown,"1
+testcase = int(input())
+2
+for test in range(testcase):
+3
+    n = int(input())
+4
+    numbers= input().split(' ')
+5
+    numbers = [int(num) for num in numbers]
+6
+    odd_numbers = [num for num in numbers if num%2]
+7
+    odds = len(odd_numbers)
+8
+    if odds >0 and odds%2 == 0:
+9
+        print(""YES"")
+10
+    else:
+11
+        print(""NO"")",63,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871950

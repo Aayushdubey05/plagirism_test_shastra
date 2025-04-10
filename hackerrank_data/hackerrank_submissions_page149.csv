@@ -1,0 +1,391 @@
+submission_id,username,problem_name,language,code,page,url
+1386870821,shiroryou,unknown,unknown,"1
+def calculate_min_cloth_pieces(M, N, A):
+2
+    # Calculate pieces needed in length and width
+3
+    pieces_length = (M + A - 1) // A
+4
+    pieces_width = (N + A - 1) // A
+5
+    6
+    # Total pieces needed is product of pieces in each dimension
+7
+    return pieces_length * pieces_width
+8
+9
+# Process input
+10
+T = int(input())
+11
+for _ in range(T):
+12
+    M, N, A = map(int, input().split())
+13
+    print(calculate_min_cloth_pieces(M, N, A))",149,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870821
+1386870824,atharvatripathi8,unknown,unknown,"1
+import math
+2
+3
+# Read input
+4
+T = int(input())
+5
+results = []
+6
+7
+for _ in range(T):
+8
+    M, N, A = map(int, input().split())
+9
+    # Calculate the minimum number of cloth pieces
+10
+    rows = math.ceil(M / A)
+11
+    cols = math.ceil(N / A)
+12
+    results.append(rows * cols)
+13
+14
+# Print results for each test case
+15
+for result in results:
+16
+    print(result)
+17",149,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870824
+1386870829,h1032221659,unknown,unknown,"1
+import math
+2
+3
+def calculate_minimum_squares(T, test_cases):
+4
+    results = []
+5
+    for i in range(T):
+6
+        M, N, A = test_cases[i]
+7
+        # Calculate the number of squares needed in each dimension
+8
+        squares_in_row = math.ceil(M / A)
+9
+        squares_in_col = math.ceil(N / A)
+10
+        # Total number of squares needed
+11
+        total_squares = squares_in_row * squares_in_col
+12
+        results.append(total_squares)
+13
+    return results
+14
+15
+# Input handling
+16
+if __name__ == ""__main__"":
+17
+    # Read the number of test cases
+18
+    T = int(input())
+19
+    test_cases = []
+20
+21
+    # Read each test case
+22
+    for _ in range(T):
+23
+        M, N, A = map(int, input().split())
+24
+        test_cases.append((M, N, A))
+25
+26
+    # Calculate results
+27
+    results = calculate_minimum_squares(T, test_cases)
+28
+29
+    # Print the results
+30
+    for result in results:
+31
+        print(result)
+32",149,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870829
+1386870814,h10322204571,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) throws IOException {
+7
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+8
+        int T = Integer.parseInt(br.readLine()); 
+9
+        StringBuilder result = new StringBuilder();
+10
+        11
+        for (int t = 0; t < T; t++) {
+12
+            String[] input = br.readLine().split("" "");
+13
+            long M = Long.parseLong(input[0]);
+14
+            long N = Long.parseLong(input[1]);
+15
+            long A = Long.parseLong(input[2]);
+16
+            17
+            long piecesAlongM = (M + A - 1) / A; 
+18
+            long piecesAlongN = (N + A - 1) / A; 
+19
+            20
+            long totalPieces = piecesAlongM * piecesAlongN;
+21
+            result.append(totalPieces).append(""\n"");
+22
+        }
+23
+        24
+        System.out.print(result.toString());
+25
+    }
+26
+}
+27",149,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870814
+1386870815,Rawat_vr44,unknown,unknown,"1
+def can_partition_into_odd_sums(test_cases):
+2
+    results = []
+3
+    for case in test_cases:
+4
+        N, A = case
+5
+        odd_count = sum(1 for x in A if x % 2 != 0)
+6
+        7
+        # We need at least two odd numbers to make both sums odd
+8
+        if odd_count >= 2:
+9
+            results.append(""YES"")
+10
+        else:
+11
+            results.append(""NO"")
+12
+    13
+    return results
+14
+15
+# Read input
+16
+T = int(input())
+17
+test_cases = []
+18
+for _ in range(T):
+19
+    N = int(input())
+20
+    A = list(map(int, input().split()))
+21
+    test_cases.append((N, A))
+22
+23
+# Get results
+24
+results = can_partition_into_odd_sums(test_cases)
+25
+26
+# Print results
+27
+for result in results:
+28
+    print(result)",149,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870815
+1386870817,shreyaojha2,unknown,unknown,"1
+def solve_test_cases(M, N, A):
+2
+    squares_lengths = (M + A - 1) // A  
+3
+    squares_widths = (N + A - 1) // A   
+4
+    5
+    return squares_lengths * squares_widths
+6
+7
+T = int(input())
+8
+9
+for _ in range(T):
+10
+    M, N, A = map(int, input().split())
+11
+    results = solve_test_cases(M, N, A)
+12
+    print(results)",149,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870817
+1386870810,h1032220730,unknown,unknown,"1
+def squarescaping(inputs):
+2
+    results = []
+3
+    for case in inputs:
+4
+        M, N, A = case
+5
+        6
+        rows = (M + A - 1) // A
+7
+        cols = (N + A - 1) // A
+8
+        results.append(rows * cols)
+9
+    return results
+10
+11
+T = int(input())
+12
+inputs = [tuple(map(int, input().split())) for _ in range(T)]
+13
+14
+results = squarescaping(inputs)
+15
+16
+for result in results:
+17
+    print(result)",149,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870810
+1386870811,bhoganashish25,unknown,unknown,"1
+def is_partition_possible(arr):
+2
+    # Counting odd and even numbers in the array
+3
+    odd_count = sum(1 for x in arr if x % 2 != 0)
+4
+    even_count = len(arr) - odd_count
+5
+    6
+    # To create two subsequences S1 and S2 such that their sums are odd
+7
+    # both sums must be odd, hence we need at least one odd number in each subsequence
+8
+    if odd_count >= 2:
+9
+        return ""YES""
+10
+    else:
+11
+        return ""NO""
+12
+13
+# Reading input
+14
+t = int(input().strip())
+15
+results = []
+16
+17
+for _ in range(t):
+18
+    n = int(input().strip())
+19
+    arr = list(map(int, input().strip().split()))
+20
+    results.append(is_partition_possible(arr))
+21
+22
+# Output results
+23
+for result in results:
+24
+    print(result)
+25",149,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870811
+1386870813,h1032221727,unknown,unknown,"1
+def squarescaping(inputs):
+2
+    results = []
+3
+    for case in inputs:
+4
+        M, N, A = case
+5
+        6
+        rows = (M + A - 1) // A
+7
+        cols = (N + A - 1) // A
+8
+        results.append(rows * cols)
+9
+    return results
+10
+11
+T = int(input())
+12
+inputs = [tuple(map(int, input().split())) for _ in range(T)]
+13
+14
+results = squarescaping(inputs)
+15
+16
+for result in results:
+17
+    print(result)",149,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870813
+1386870809,amansharmaa1205,unknown,unknown,"1
+# Input number of test cases
+2
+T = int(input().strip())
+3
+results = []
+4
+5
+for _ in range(T):
+6
+    # Input the size of the array
+7
+    N = int(input().strip())
+8
+    9
+    # Input the array
+10
+    A = list(map(int, input().strip().split()))
+11
+    12
+    # Ensure the input size matches the array size
+13
+    if len(A) != N:
+14
+        results.append(""NO"")
+15
+        continue
+16
+    17
+    # Count the number of odd numbers, stop once we find 2
+18
+    odd_count = 0
+19
+    for x in A:
+20
+        if x % 2 != 0:
+21
+            odd_count += 1
+22
+        if odd_count >= 2:
+23
+            results.append(""YES"")
+24
+            break
+25
+    else:
+26
+        results.append(""NO"")
+27
+28
+# Output the results
+29
+print(""\n"".join(results))
+30",149,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870809

@@ -1,0 +1,377 @@
+submission_id,username,problem_name,language,code,page,url
+1386872583,h1032221622,unknown,unknown,"1
+def solve_test_cases(M, N, A):
+2
+    squares_lengths = (M + A - 1) // A  
+3
+    squares_widths = (N + A - 1) // A   
+4
+    5
+    return squares_lengths * squares_widths
+6
+7
+T = int(input())
+8
+9
+for _ in range(T):
+10
+    M, N, A = map(int, input().split())
+11
+    results = solve_test_cases(M, N, A)
+12
+    print(results)
+13
+14
+.......................
+15
+def solve_test_case(N, A):
+16
+    odd_sum = sum(x for x in A if x % 2)
+17
+    even_sum = sum(x for x in A if x % 2 == 0)
+18
+    19
+    for i in range(N):
+20
+        if A[i] % 2:  
+21
+            s1 = A[i]
+22
+            remaining_odd = odd_sum - s1
+23
+            if remaining_odd > 0 and s1 * remaining_odd % 2 == 1:
+24
+                return ""YES""
+25
+    26
+    return ""NO""
+27
+28
+T = int(input())
+29
+for _ in range(T):
+30
+    N = int(input())
+31
+    A = list(map(int, input().split()))
+32
+    print(solve_test_case(N, A))
+33
+..........................
+34
+def solve_test_cases(N):
+35
+    return (1 << N) - 1 
+36
+37
+T = int(input())
+38
+for _ in range(T):
+39
+    N = int(input())
+40
+    print(solve_test_cases(N))",20,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386872583
+1386872584,h1032231260,unknown,unknown,"1
+T = int(input())
+2
+3
+for _ in range(T):
+4
+    N = int(input())
+5
+    non_empty_subsets = (1 << N) - 1 
+6
+    print(non_empty_subsets)",20,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872584
+1386872585,jashbarot05,unknown,unknown,"1
+def solve():
+2
+    T = int(input())  # Number of test cases
+3
+    results = []
+4
+    5
+    for _ in range(T):
+6
+        N = int(input())  # Size of array
+7
+        A = list(map(int, input().split()))  # Array elements
+8
+        9
+        # Count odd and even numbers
+10
+        odd_count = sum(1 for x in A if x % 2 == 1)
+11
+        12
+        # For product to be odd, both sums must be odd
+13
+        # For a sum to be odd, need odd number of odd elements
+14
+        # We need to be able to split the array into two parts
+15
+        # where each part has an odd sum
+16
+        17
+        # Check if we can create two subsequences with odd sums
+18
+        can_partition = False
+19
+        20
+        if odd_count >= 1:  # Need at least one odd number
+21
+            remaining_odd = odd_count - 1
+22
+            # If we put one odd number in S1, we need enough remaining odd numbers
+23
+            # to make S2 odd as well (need odd number of odds)
+24
+            if remaining_odd >= 1:  # Need at least one more odd for S2
+25
+                can_partition = True
+26
+                27
+        results.append(""YES"" if can_partition else ""NO"")
+28
+    29
+    print(""\n"".join(results))
+30
+31
+if __name__ == ""__main__"":
+32
+    solve()",20,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872585
+1386872579,bhooomikapal10,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) throws IOException {
+7
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+8
+        StringBuilder result = new StringBuilder();
+9
+10
+        int T = Integer.parseInt(br.readLine()); // Number of test cases
+11
+12
+        for (int t = 0; t < T; t++) {
+13
+            int N = Integer.parseInt(br.readLine()); // Number of elements in the array
+14
+            String[] elements = br.readLine().split("" "");
+15
+16
+            int oddCount = 0; // Count of odd numbers
+17
+18
+            // Count odd numbers in the array
+19
+            for (int i = 0; i < N; i++) {
+20
+                int num = Integer.parseInt(elements[i]);
+21
+                if (num % 2 == 1) { // Check if the number is odd
+22
+                    oddCount++;
+23
+                }
+24
+            }
+25
+26
+            // Determine if partition is possible
+27
+            if (oddCount >= 2) {
+28
+                result.append(""YES\n"");
+29
+            } else {
+30
+                result.append(""NO\n"");
+31
+            }
+32
+        }
+33
+34
+        // Output the results
+35
+        System.out.print(result.toString());
+36
+    }
+37
+}
+38",20,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872579
+1386872581,asitbaswant6469,unknown,unknown,"1
+# Function to calculate the number of non-empty subsets
+2
+def count_non_empty_subsets(N):
+3
+    return (2 ** N) - 1
+4
+5
+# Read the number of test cases
+6
+T = int(input())
+7
+8
+# Process each test case
+9
+for _ in range(T):
+10
+    N = int(input())  # Read the number of elements in the set
+11
+    print(count_non_empty_subsets(N))",20,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872581
+1386872582,rajtishika,unknown,unknown,"1
+def set(tc):
+2
+    r=[]
+3
+    for i in tc:
+4
+        set=(2**i)-1
+5
+        r.append(set)
+6
+    return r
+7
+t=int(input())
+8
+tc=[]
+9
+for _ in range(t):
+10
+    n=int(input())
+11
+    tc.append(n)
+12
+r=set(tc)
+13
+for rs in r:
+14
+    print(rs)
+15
+        16
+17",20,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872582
+1386872576,kushintwala05,unknown,unknown,"1
+2
+        3
+def solve():
+4
+    t=int(input())
+5
+    for _ in range(t):
+6
+        n=int(input())
+7
+        print(2**n-1)
+8
+solve()
+9
+    10
+    11
+    12
+    13
+    14
+    15
+    16
+17",20,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872576
+1386872577,tanishkini,unknown,unknown,"1
+def solve():
+2
+    T = int(input())  # Number of test cases
+3
+    for _ in range(T):
+4
+        N = int(input())  # Number of elements in the set
+5
+        # Calculate number of non-empty subsets, which is (2^N - 1)
+6
+        result = (2 ** N) - 1
+7
+        print(result)
+8
+9
+# Call the solve function to execute the logic
+10
+solve()
+11",20,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872577
+1386872578,akesherwani900,unknown,unknown,"1
+def can_partition_with_odd_product(test_cases):
+2
+    results = []
+3
+4
+    for case in test_cases:
+5
+        n, array = case
+6
+        odd_count = sum(1 for x in array if x % 2 != 0)
+7
+8
+        # Check if there are at least two odd numbers.
+9
+        if odd_count >= 2:
+10
+            results.append(""YES"")
+11
+        else:
+12
+            results.append(""NO"")
+13
+14
+    return results
+15
+16
+# Input handling
+17
+if __name__ == ""__main__"":
+18
+    t = int(input())  # Number of test cases
+19
+    test_cases = []
+20
+21
+    for _ in range(t):
+22
+        n = int(input())  # Number of integers in the array
+23
+        array = list(map(int, input().split()))
+24
+        test_cases.append((n, array))
+25
+26
+    # Process the test cases
+27
+    output = can_partition_with_odd_product(test_cases)
+28
+29
+    # Print results
+30
+    for result in output:
+31
+        print(result)
+32",20,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872578
+1386872575,archanad0204,unknown,unknown,"1
+# Function to calculate the number of non-empty subsets
+2
+def count_non_empty_subsets(N):
+3
+    return (2 ** N) - 1
+4
+5
+# Read the number of test cases
+6
+T = int(input())
+7
+8
+# Process each test case
+9
+for _ in range(T):
+10
+    N = int(input())  # Read the number of elements in the set
+11
+    print(count_non_empty_subsets(N))",20,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872575

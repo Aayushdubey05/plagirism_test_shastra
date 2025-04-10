@@ -1,0 +1,371 @@
+submission_id,username,problem_name,language,code,page,url
+1386871134,ts9892singh,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) throws IOException {
+7
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+8
+        9
+        int T = Integer.parseInt(br.readLine());
+10
+        11
+        StringBuilder result = new StringBuilder();
+12
+        13
+        while (T-- > 0) {
+14
+            int N = Integer.parseInt(br.readLine());
+15
+            result.append((1 << N) - 1).append(""\n"");  // 2^N - 1 using bitwise shift
+16
+        }
+17
+        18
+        System.out.print(result);
+19
+    }
+20
+}",126,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871134
+1386871136,hardikj1511,unknown,unknown,"1
+def calculate_non_empty_subsets(test_cases):
+2
+    results = []
+3
+    for n in test_cases:
+4
+        # Calculate the number of non-empty subsets
+5
+        results.append((2 ** n) - 1)
+6
+    return results
+7
+8
+# Input
+9
+t = int(input())  # Number of test cases
+10
+test_cases = []
+11
+12
+for _ in range(t):
+13
+    n = int(input())
+14
+    test_cases.append(n)
+15
+16
+# Calculate results
+17
+results = calculate_non_empty_subsets(test_cases)
+18
+19
+# Output
+20
+for result in results:
+21
+    print(result)
+22",126,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871136
+1386871137,anushkambtech,unknown,unknown,"1
+testcases = int(input())
+2
+for test in range(testcases):
+3
+    n = int(input())
+4
+    print(2**n -1)",126,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871137
+1386871130,gharshit2502,unknown,unknown,"1
+def can_partition_into_subsequences(test_cases):
+2
+    results = []
+3
+    for case in test_cases:
+4
+        N, arr = case
+5
+        6
+        # Step 1: Check if the sum is even
+7
+        total_sum = sum(arr)
+8
+        if total_sum % 2 != 0:
+9
+            results.append(""NO"")
+10
+            continue
+11
+        12
+        # Step 2: Count the odd numbers
+13
+        odd_count = sum(1 for x in arr if x % 2 != 0)
+14
+        15
+        # Step 3: If sum is even and there are at least two odd numbers, it's possible
+16
+        if odd_count >= 2:
+17
+            results.append(""YES"")
+18
+        else:
+19
+            results.append(""NO"")
+20
+    21
+    return results
+22
+23
+# Input reading
+24
+T = int(input())  # Number of test cases
+25
+test_cases = []
+26
+for _ in range(T):
+27
+    N = int(input())  # Size of the list
+28
+    arr = list(map(int, input().split()))  # The list of integers
+29
+    test_cases.append((N, arr))
+30
+31
+# Compute and output the results
+32
+results = can_partition_into_subsequences(test_cases)
+33
+for result in results:
+34
+    print(result)",126,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871130
+1386871131,h1032221543,unknown,unknown,"1
+import math
+2
+T = int(input())
+3
+for _ in range(T):
+4
+    M, N, A = map(int, input().split())    
+5
+    cloths_for_M = math.ceil(M / A)
+6
+    cloths_for_N = math.ceil(N / A)    
+7
+    result = cloths_for_M * cloths_for_N
+8
+    print(result)",126,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871131
+1386871132,sethdharmik5,unknown,unknown,"1
+import java.util.*;
+2
+3
+public class PartitionOddProduct {
+4
+    public static void main(String[] args) {
+5
+        Scanner sc = new Scanner(System.in);
+6
+7
+        // Read the number of test cases
+8
+        int T = sc.nextInt();
+9
+        10
+        while (T-- > 0) {
+11
+            // Read the number of elements in the array
+12
+            int N = sc.nextInt();
+13
+            14
+            // Read the array elements
+15
+            int[] arr = new int[N];
+16
+            for (int i = 0; i < N; i++) {
+17
+                arr[i] = sc.nextInt();
+18
+            }
+19
+20
+            // Process the array and determine the output
+21
+            if (canPartition(arr)) {
+22
+                System.out.println(""YES"");
+23
+            } else {
+24
+                System.out.println(""NO"");
+25
+            }
+26
+        }
+27
+        sc.close();
+28
+    }
+29
+30
+    private static boolean canPartition(int[] arr) {
+31
+        // Count the number of even and odd elements
+32
+        int oddCount = 0;
+33
+        int evenCount = 0;
+34
+35
+        for (int num : arr) {
+36
+            if (num % 2 == 0) {
+37
+                evenCount++;
+38
+            } else {
+39
+                oddCount++;
+40
+            }
+41
+        }
+42
+43
+        // For the product of sums to be odd:
+44
+        // Both subsequences must have at least one odd element.
+45
+        return oddCount >= 2;
+46
+    }
+47
+}
+48",126,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871132
+1386871128,purvi_vishwakar1,unknown,unknown,"1
+def can_partition_odd_product(A):
+2
+    """"""
+3
+    Checks if the given array can be partitioned into two subsequences 
+4
+    such that the product of their sums is odd.
+5
+6
+    Args:
+7
+      A: The input array of integers.
+8
+9
+    Returns:
+10
+      ""YES"" if possible, ""NO"" otherwise.
+11
+    """"""
+12
+13
+    # Check if there are any odd numbers in the array
+14
+    has_odd = any(num % 2 == 1 for num in A)
+15
+16
+    # If there are no odd numbers, it's impossible to have an odd product
+17
+    if not has_odd:
+18
+        return ""NO""
+19
+20
+    # If there's only one odd number, it's impossible to have an odd product
+21
+    if sum(num % 2 for num in A) == 1: 
+22
+        return ""NO""
+23
+24
+    # Otherwise, it's always possible to create an odd product
+25
+    return ""YES""
+26
+27
+if __name__ == ""__main__"":
+28
+    T = int(input())
+29
+30
+    for _ in range(T):
+31
+        N = int(input())
+32
+        A = list(map(int, input().split()))
+33
+        print(can_partition_odd_product(A))",126,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871128
+1386871127,pandeyshreya358,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) throws IOException {
+7
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+8
+        9
+        int T = Integer.parseInt(br.readLine());
+10
+        11
+        StringBuilder result = new StringBuilder();
+12
+        13
+        while (T-- > 0) {
+14
+            int N = Integer.parseInt(br.readLine());
+15
+            result.append((1 << N) - 1).append(""\n"");  // 2^N - 1 using bitwise shift
+16
+        }
+17
+        18
+        System.out.print(result);
+19
+    }
+20
+}",126,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871127
+1386871129,singhyatharthsn,unknown,unknown,"1
+import math
+2
+3
+T = int(input())
+4
+for _ in range(T):
+5
+    N = int(input())
+6
+    print((1 << N) - 1)",126,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871129
+1386871126,neharoy_1158,unknown,unknown,"1
+def non_empty_subsets(test_cases):
+2
+    results = []
+3
+    for N in test_cases:
+4
+        results.append((1 << N) - 1)  
+5
+    return results
+6
+7
+T = int(input())
+8
+test_cases = [int(input()) for _ in range(T)]
+9
+10
+for result in non_empty_subsets(test_cases):
+11
+    print(result)
+12",126,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871126

@@ -1,0 +1,99 @@
+[2025-04-10 15:00:30] 
+==== Processing Page 1/190 ====
+[2025-04-10 15:00:48] Error processing page 1: Message: 
+
+[2025-04-10 15:00:56] Page refreshed. Trying to continue...
+[2025-04-10 15:00:56] 
+==== Processing Page 2/190 ====
+[2025-04-10 15:01:15] Error processing page 2: Message: 
+
+[2025-04-10 15:01:22] Page refreshed. Trying to continue...
+[2025-04-10 15:01:22] 
+==== Processing Page 3/190 ====
+[2025-04-10 15:01:40] Error processing page 3: Message: 
+
+[2025-04-10 15:01:47] Page refreshed. Trying to continue...
+[2025-04-10 15:01:47] 
+==== Processing Page 4/190 ====
+[2025-04-10 15:02:05] Error processing page 4: Message: 
+
+[2025-04-10 15:02:12] Page refreshed. Trying to continue...
+[2025-04-10 15:02:12] 
+==== Processing Page 5/190 ====
+[2025-04-10 15:02:31] Error processing page 5: Message: 
+
+[2025-04-10 15:02:38] Page refreshed. Trying to continue...
+[2025-04-10 15:02:38] 
+==== Processing Page 6/190 ====
+[2025-04-10 15:02:56] Error processing page 6: Message: 
+
+[2025-04-10 15:03:03] Page refreshed. Trying to continue...
+[2025-04-10 15:03:03] 
+==== Processing Page 7/190 ====
+[2025-04-10 15:03:22] Error processing page 7: Message: 
+
+[2025-04-10 15:03:30] Page refreshed. Trying to continue...
+[2025-04-10 15:03:30] 
+==== Processing Page 8/190 ====
+[2025-04-10 15:03:48] Error processing page 8: Message: 
+
+[2025-04-10 15:03:55] Page refreshed. Trying to continue...
+[2025-04-10 15:03:55] 
+==== Processing Page 9/190 ====
+[2025-04-10 15:04:13] Error processing page 9: Message: 
+
+[2025-04-10 15:04:20] Page refreshed. Trying to continue...
+[2025-04-10 15:04:20] 
+==== Processing Page 10/190 ====
+[2025-04-10 15:04:38] Error processing page 10: Message: 
+
+[2025-04-10 15:04:45] Page refreshed. Trying to continue...
+[2025-04-10 15:04:45] 
+==== Processing Page 11/190 ====
+[2025-04-10 15:05:03] Error processing page 11: Message: 
+
+[2025-04-10 15:05:10] Page refreshed. Trying to continue...
+[2025-04-10 15:05:10] 
+==== Processing Page 12/190 ====
+[2025-04-10 15:05:29] Error processing page 12: Message: 
+
+[2025-04-10 15:05:37] Page refreshed. Trying to continue...
+[2025-04-10 15:05:37] 
+==== Processing Page 13/190 ====
+[2025-04-10 15:05:55] Error processing page 13: Message: 
+
+[2025-04-10 15:06:03] Page refreshed. Trying to continue...
+[2025-04-10 15:06:03] 
+==== Processing Page 14/190 ====
+[2025-04-10 15:06:21] Error processing page 14: Message: 
+
+[2025-04-10 15:06:29] Page refreshed. Trying to continue...
+[2025-04-10 15:06:29] 
+==== Processing Page 15/190 ====
+[2025-04-10 15:06:43] Error processing page 15: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=135.0.7049.42)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7F87C5335+78597]
+	GetHandleVerifier [0x00007FF7F87C5390+78688]
+	(No symbol) [0x00007FF7F85791AA]
+	(No symbol) [0x00007FF7F8564EF5]
+	(No symbol) [0x00007FF7F8589F04]
+	(No symbol) [0x00007FF7F85FED0F]
+	(No symbol) [0x00007FF7F861EBB2]
+	(No symbol) [0x00007FF7F85F6EC3]
+	(No symbol) [0x00007FF7F85C03F8]
+	(No symbol) [0x00007FF7F85C1163]
+	GetHandleVerifier [0x00007FF7F8A6EEED+2870973]
+	GetHandleVerifier [0x00007FF7F8A69698+2848360]
+	GetHandleVerifier [0x00007FF7F8A86973+2967875]
+	GetHandleVerifier [0x00007FF7F87E017A+188746]
+	GetHandleVerifier [0x00007FF7F87E845F+222255]
+	GetHandleVerifier [0x00007FF7F87CD2B4+111236]
+	GetHandleVerifier [0x00007FF7F87CD462+111666]
+	GetHandleVerifier [0x00007FF7F87B3589+5465]
+	BaseThreadInitThunk [0x00007FFF1395E8D7+23]
+	RtlUserThreadStart [0x00007FFF148D14FC+44]
+
+[2025-04-10 15:06:43] Could not recover. Stopping scraper.
+[2025-04-10 15:06:43] Scraping complete! Total submissions scraped: 0

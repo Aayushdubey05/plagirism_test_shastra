@@ -1,0 +1,977 @@
+submission_id,username,problem_name,language,code,page,url
+1386870900,mishranirajk121,unknown,unknown,"1
+def can_partition_odd_product(T, test_cases):
+2
+    results = []
+3
+    for i in range(T):
+4
+        N, A = test_cases[i]
+5
+        odd_count = sum(1 for x in A if x % 2 != 0)
+6
+        7
+        if odd_count >= 2:
+8
+            results.append(""YES"")
+9
+        else:
+10
+            results.append(""NO"")
+11
+    return results
+12
+13
+14
+import sys
+15
+input = sys.stdin.read
+16
+data = input().split()
+17
+18
+T = int(data[0])
+19
+test_cases = []
+20
+index = 1
+21
+for _ in range(T):
+22
+    N = int(data[index])
+23
+    A = list(map(int, data[index + 1: index + 1 + N]))
+24
+    test_cases.append((N, A))
+25
+    index += 1 + N
+26
+27
+28
+results = can_partition_odd_product(T, test_cases)
+29
+sys.stdout.write(""\n"".join(results) + ""\n"")
+30",144,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870900
+1386870901,hardikj1511,unknown,unknown,"1
+def can_partition_odd_product(test_cases):
+2
+    results = []
+3
+    for _, A in test_cases:
+4
+        # Count the number of odd numbers in the array
+5
+        odd_count = sum(1 for x in A if x % 2 != 0)
+6
+        # If there are at least 2 odd numbers, we can partition
+7
+        if odd_count >= 2:
+8
+            results.append(""YES"")
+9
+        else:
+10
+            results.append(""NO"")
+11
+    return results
+12
+13
+# Input reading
+14
+import sys
+15
+input = sys.stdin.read
+16
+data = input().split()
+17
+18
+T = int(data[0])
+19
+index = 1
+20
+test_cases = []
+21
+22
+for _ in range(T):
+23
+    N = int(data[index])
+24
+    index += 1
+25
+    A = list(map(int, data[index:index + N]))
+26
+    index += N
+27
+    test_cases.append((N, A))
+28
+29
+# Get the results
+30
+results = can_partition_odd_product(test_cases)
+31
+32
+# Output results
+33
+sys.stdout.write(""\n"".join(results) + ""\n"")
+34",144,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870901
+1386870902,h1032220677,unknown,unknown,"1
+def can_partition_to_odd_product(test_cases):
+2
+    results = []
+3
+    for n, array in test_cases:
+4
+        odd_count = sum(1 for x in array if x % 2 == 1)
+5
+        if odd_count >= 2:
+6
+            results.append(""YES"")
+7
+        else:
+8
+            results.append(""NO"")
+9
+    return results
+10
+11
+# Input handling
+12
+T = int(input().strip())  # Number of test cases
+13
+test_cases = []
+14
+for _ in range(T):
+15
+    N = int(input().strip())
+16
+    A = list(map(int, input().strip().split()))
+17
+    test_cases.append((N, A))
+18
+19
+# Solve the problem
+20
+results = can_partition_to_odd_product(test_cases)
+21
+22
+# Output results
+23
+print(""\n"".join(results))
+24",144,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870902
+1386870896,pandeyharsh0337,unknown,unknown,"1
+#include <iostream>
+2
+#include <vector>
+3
+using namespace std;
+4
+5
+int main() {
+6
+    int T;
+7
+    cin >> T;  // Read the number of test cases
+8
+9
+    while (T--) {
+10
+        int N;
+11
+        cin >> N;  // Read the size of the array
+12
+        vector<int> A(N);
+13
+        int odd_count = 0;
+14
+        15
+        // Read the array and count odd numbers
+16
+        for (int i = 0; i < N; i++) {
+17
+            cin >> A[i];
+18
+            if (A[i] % 2 != 0) {
+19
+                odd_count++;
+20
+            }
+21
+        }
+22
+        23
+        // If there are at least 2 odd numbers, it's possible to partition the array
+24
+        if (odd_count >= 2) {
+25
+            cout << ""YES"" << endl;
+26
+        } else {
+27
+            cout << ""NO"" << endl;
+28
+        }
+29
+    }
+30
+    31
+    return 0;
+32
+}
+33",144,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870896
+1386870897,harshgume17,unknown,unknown,"1
+def calculate_min_cloth_pieces(M, N, A):
+2
+    # Calculate pieces needed in length and width
+3
+    pieces_length = (M + A - 1) // A
+4
+    pieces_width = (N + A - 1) // A
+5
+    6
+    # Total pieces needed is product of pieces in each dimension
+7
+    return pieces_length * pieces_width
+8
+9
+# Process input
+10
+T = int(input())
+11
+for _ in range(T):
+12
+    M, N, A = map(int, input().split())
+13
+    print(calculate_min_cloth_pieces(M, N, A))",144,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870897
+1386870899,majorsecretx,unknown,unknown,"1
+def can_partition_for_odd_multiplication(A):
+2
+3
+    even_sum = 0
+4
+    odd_sum = 0
+5
+6
+    for num in A:
+7
+        if num % 2 == 0:
+8
+            even_sum += num
+9
+        else:
+10
+            odd_sum += num
+11
+12
+    if even_sum % 2 == 0 and odd_sum % 2 == 0:
+13
+        return False
+14
+    return True
+15
+16
+if __name__ == ""__main__"":
+17
+    T = int(input()) 
+18
+19
+    for _ in range(T):
+20
+        N = int(input()) 
+21
+        A = list(map(int, input().split()))
+22
+23
+        if can_partition_for_odd_multiplication(A):
+24
+            print(""NO"")
+25
+        else:
+26
+            print(""YES"")",144,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870899
+1386870892,rheetiksharma601,unknown,unknown,"1
+import java.io.BufferedReader;
+2
+import java.io.IOException;
+3
+import java.io.InputStreamReader;
+4
+import java.io.PrintWriter;
+5
+import java.math.BigDecimal;
+6
+import java.math.BigInteger;
+7
+import java.math.MathContext;
+8
+import java.nio.channels.Pipe.SourceChannel;
+9
+import java.rmi.StubNotFoundException;
+10
+import java.util.*;
+11
+12
+public class cf {
+13
+    static int mod = (int) 1e9 + 7;
+14
+    static int N = (int) 2e5 + 5;
+15
+    static FastReader sc = new FastReader();
+16
+    static PrintWriter out = new PrintWriter(System.out);
+17
+    static int count = 0;
+18
+19
+    public static void main(String[] args) {
+20
+21
+        // boolean[] isPrime=prime(1000000009);
+22
+23
+        int tCase = sc.nextInt();
+24
+25
+        l1: 
+26
+        while (tCase-- > 0) {
+27
+28
+            int n=sc.nextInt();
+29
+            int m=sc.nextInt();
+30
+            int a=sc.nextInt();
+31
+32
+            if(a>=n && a>=m){
+33
+                System.out.println(1);
+34
+            }else{
+35
+                System.out.println((int)(Math.ceil((double)Math.max(n,m)/a))*2);
+36
+            }
+37
+            38
+            39
+40
+41
+        }
+42
+        out.flush();
+43
+44
+    }
+45
+46
+    public static long longSqrt(long n){
+47
+        if(n==0){
+48
+            return 0;
+49
+        }
+50
+        if(n==1){
+51
+            return 1;
+52
+        }
+53
+        return BigInteger.valueOf(n).sqrt().longValue();
+54
+    }
+55
+56
+    public static long fact(int num) {
+57
+        if (num == 1 || num == 0)
+58
+            return 1;
+59
+        return (num  * fact(num - 1));
+60
+    }
+61
+62
+    public static long powerMod(long base, long exp, long mod) {
+63
+        long res = 1;
+64
+        base = base % mod;
+65
+        if (base == 0)
+66
+            return 0;
+67
+68
+        while (exp > 0) {
+69
+            if ((exp & 1) == 1) {
+70
+                res = (res * base) % mod;
+71
+            }
+72
+            exp = exp >> 1;
+73
+            base = (base * base) % mod;
+74
+        }
+75
+        return res;
+76
+    }
+77
+78
+    // public static HashMap<String,Pair> sortMap(HashMap<String,Pair> m){
+79
+    // List<Map.Entry<String, Pair>> list = new ArrayList<>(m.entrySet());
+80
+81
+    // list.sort((e1,e2) -> {
+82
+    // Pair p1=e1.getValue();
+83
+    // Pair p2=e2.getValue();
+84
+85
+    // if (p1.i != p2.i) {
+86
+    // return Integer.compare(p1.i, p2.i);
+87
+    // } else {
+88
+    // return Integer.compare(p1.j, p2.j);
+89
+    // }
+90
+    // });
+91
+92
+    // LinkedHashMap<String, Pair> sortedMap = new LinkedHashMap<>();
+93
+    // for (Map.Entry<String, Pair> entry : list) {
+94
+    // sortedMap.put(entry.getKey(), entry.getValue());
+95
+    // }
+96
+    // return sortedMap;
+97
+    // }
+98
+99
+    public static <K> HashMap<K, Pair> sortMap(Map<K, Pair> map) {
+100
+        List<Map.Entry<K, Pair>> list = new ArrayList<>(map.entrySet());
+101
+102
+        list.sort((e1, e2) -> {
+103
+            Pair p1 = e1.getValue();
+104
+            Pair p2 = e2.getValue();
+105
+106
+            if (p1.i != p2.i) {
+107
+                return Integer.compare(p1.i, p2.i);
+108
+            } else {
+109
+                return Integer.compare(p1.j, p2.j);
+110
+            }
+111
+        });
+112
+113
+        HashMap<K, Pair> sortedMap = new LinkedHashMap<>();
+114
+        for (Map.Entry<K, Pair> entry : list) {
+115
+            sortedMap.put(entry.getKey(), entry.getValue());
+116
+        }
+117
+        return sortedMap;
+118
+    }
+119
+120
+    public static long sumOf2(int x, int y) {
+121
+        return (long) ((long) Math.pow(2, y + 1) - Math.pow(2, x));
+122
+    }
+123
+124
+    static class Pair {
+125
+        int i;
+126
+        int j;
+127
+128
+        public Pair(int i, int j) {
+129
+            this.i = i;
+130
+            this.j = j;
+131
+        }
+132
+    }
+133
+134
+    public static BigDecimal sqrt(BigDecimal value, MathContext mc) {
+135
+        BigDecimal x = new BigDecimal(Math.sqrt(value.doubleValue()), mc);
+136
+        return x.add(new BigDecimal(value.subtract(x.multiply(x)).doubleValue() / (x.doubleValue() * 2.0), mc));
+137
+    }
+138
+139
+    140
+141
+    public static BigDecimal distance(BigDecimal x1, BigDecimal y1, BigDecimal x2, BigDecimal y2) {
+142
+        BigDecimal deltaX = x2.subtract(x1);
+143
+        BigDecimal deltaY = y2.subtract(y1);
+144
+145
+        BigDecimal sumOfSquares = deltaX.multiply(deltaX).add(deltaY.multiply(deltaY));
+146
+        return sqrt(sumOfSquares, MathContext.DECIMAL128);
+147
+    }
+148
+149
+    public static int closestMultiple(int a, int b, int k) {
+150
+        int quotient = b / a;
+151
+        int multipleBelow = a * quotient;
+152
+        int multipleAbove = a * (quotient + 1);
+153
+154
+        int distanceBelow = Math.abs(multipleBelow - b);
+155
+        int distanceAbove = Math.abs(multipleAbove - b);
+156
+        if (distanceBelow <= k && distanceAbove <= k) {
+157
+            return distanceBelow < distanceAbove ? multipleBelow : multipleAbove;
+158
+        } else if (distanceBelow <= k) {
+159
+            return multipleBelow;
+160
+        } else if (distanceAbove <= k) {
+161
+            return multipleAbove;
+162
+        } else {
+163
+            return -1;
+164
+        }
+165
+    }
+166
+167
+    public static boolean[] prime(int limit) {
+168
+        boolean[] isPrime = new boolean[limit + 1];
+169
+        Arrays.fill(isPrime, true);
+170
+        isPrime[0] = false;
+171
+        isPrime[1] = false;
+172
+173
+        for (int i = 2; i * i <= limit; i++) {
+174
+            if (isPrime[i]) {
+175
+                for (int j = i * i; j <= limit; j += i) {
+176
+                    isPrime[j] = false;
+177
+                }
+178
+            }
+179
+        }
+180
+        return isPrime;
+181
+182
+    }
+183
+184
+    public static boolean isPrime(int num) {
+185
+        if (num <= 1) {
+186
+            return false;
+187
+        }
+188
+        if (num <= 3) {
+189
+            return true;
+190
+        }
+191
+        if (num % 2 == 0 || num % 3 == 0) {
+192
+            return false;
+193
+        }
+194
+        for (int i = 5; i * i <= num; i += 6) {
+195
+            if (num % i == 0 || num % (i + 2) == 0) {
+196
+                return false;
+197
+            }
+198
+        }
+199
+        return true;
+200
+    }
+201
+202
+    public static int gcd(int a, int b) {
+203
+        while (b != 0) {
+204
+            int temp = b;
+205
+            b = a % b;
+206
+            a = temp;
+207
+        }
+208
+        return a;
+209
+    }
+210
+211
+    // public static long combination(int n, int k) {
+212
+    // if(n < k) return 0;
+213
+    // return (fact[n] * p((fact[n - k] * fact[k]) % mod, mod - 2)) % mod;
+214
+    // }
+215
+    public static long p(long a, long b) {
+216
+        long r = 1;
+217
+        while (b > 0) {
+218
+            long res = b & 1;
+219
+            if (res == 1)
+220
+                r = (r * a) % mod;
+221
+            b /= 2;
+222
+            a = (a * a) % mod;
+223
+        }
+224
+        return r;
+225
+    }
+226
+227
+    public static long combination(int n, int k) {
+228
+        if (k > n) {
+229
+            return 0;
+230
+        }
+231
+        if (k == 0 || k == n) {
+232
+            return 1;
+233
+        }
+234
+        k = Math.min(k, n - k);
+235
+        long c = 1;
+236
+        for (int i = 0; i < k; i++) {
+237
+            c = c * (n - i) / (i + 1);
+238
+        }
+239
+        return c;
+240
+    }
+241
+242
+    public static int findGCD(int[] arr) {
+243
+        int result = arr[0];
+244
+        for (int i = 1; i < arr.length; i++) {
+245
+            result = gcd(result, arr[i]);
+246
+            if (result == 1) {
+247
+                return 1;
+248
+            }
+249
+        }
+250
+        return result;
+251
+    }
+252
+253
+    static class FastReader {
+254
+        BufferedReader br;
+255
+        StringTokenizer st;
+256
+257
+        public FastReader() {
+258
+            br = new BufferedReader(
+259
+                    new InputStreamReader(System.in));
+260
+        }
+261
+262
+        String next() {
+263
+            while (st == null || !st.hasMoreElements()) {
+264
+                try {
+265
+                    st = new StringTokenizer(br.readLine());
+266
+                } catch (IOException e) {
+267
+                    e.printStackTrace();
+268
+                }
+269
+            }
+270
+            return st.nextToken();
+271
+        }
+272
+273
+        int nextInt() {
+274
+            return Integer.parseInt(next());
+275
+        }
+276
+277
+        long nextLong() {
+278
+            return Long.parseLong(next());
+279
+        }
+280
+281
+        double nextDouble() {
+282
+            return Double.parseDouble(next());
+283
+        }
+284
+285
+        String nextLine() {
+286
+            String str = """";
+287
+            try {
+288
+                if (st.hasMoreTokens()) {
+289
+                    str = st.nextToken(""\n"");
+290
+                } else {
+291
+                    str = br.readLine();
+292
+                }
+293
+            } catch (IOException e) {
+294
+                e.printStackTrace();
+295
+            }
+296
+            return str;
+297
+        }
+298
+    }
+299
+300
+}
+301",144,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870892
+1386870894,antara4210,unknown,unknown,"1
+import sys
+2
+3
+t = int(sys.stdin.readline())
+4
+for _ in range(t):
+5
+    n = int(sys.stdin.readline())
+6
+    # Read the array as strings, no big list
+7
+    line = sys.stdin.readline().split()
+8
+    9
+    count_odd = 0
+10
+    for val in line:
+11
+        if int(val) % 2 == 1:
+12
+            count_odd += 1
+13
+    14
+    # Condition: need at least 2 odd elements, and total # of odd is even
+15
+    if count_odd >= 2 and (count_odd % 2 == 0):
+16
+        print(""YES"")
+17
+    else:
+18
+        print(""NO"")",144,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870894
+1386870895,meetj665,unknown,unknown,"1
+def can_partition(test_cases):
+2
+    results = []
+3
+    for case in test_cases:
+4
+        n, arr = case
+5
+        # Count odd numbers in the array
+6
+        odd_count = sum(1 for x in arr if x % 2 != 0)
+7
+        # At least two odd numbers are required
+8
+        if odd_count >= 2:
+9
+            results.append(""YES"")
+10
+        else:
+11
+            results.append(""NO"")
+12
+    return results
+13
+14
+# Input handling
+15
+if __name__ == ""__main__"":
+16
+    import sys
+17
+    input = sys.stdin.read
+18
+    data = input().split()
+19
+    20
+    T = int(data[0])  # Number of test cases
+21
+    index = 1
+22
+    test_cases = []
+23
+    24
+    for _ in range(T):
+25
+        n = int(data[index])
+26
+        index += 1
+27
+        arr = list(map(int, data[index:index + n]))
+28
+        index += n
+29
+        test_cases.append((n, arr))
+30
+    31
+    # Get results
+32
+    results = can_partition(test_cases)
+33
+    34
+    # Output results
+35
+    sys.stdout.write(""\n"".join(results) + ""\n"")
+36",144,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870895
+1386870890,ansh_vishwa2020,unknown,unknown,"1
+def squarescaping(inputs):
+2
+    results = []
+3
+    for case in inputs:
+4
+        M, N, A = case
+5
+        6
+        rows = (M + A - 1) // A
+7
+        cols = (N + A - 1) // A
+8
+        results.append(rows * cols)
+9
+    return results
+10
+11
+# Input reading
+12
+T = int(input())
+13
+inputs = [tuple(map(int, input().split())) for _ in range(T)]
+14
+15
+# Compute results
+16
+results = squarescaping(inputs)
+17
+18
+# Output results
+19
+for result in results:
+20
+    print(result)
+21",144,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870890

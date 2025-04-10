@@ -1,0 +1,415 @@
+submission_id,username,problem_name,language,code,page,url
+1386870843,anshu_gupta_03,unknown,unknown,"1
+def squarescaping(inputs):
+2
+    results = []
+3
+    for case in inputs:
+4
+        M, N, A = case
+5
+        6
+        rows = (M + A - 1) // A
+7
+        cols = (N + A - 1) // A
+8
+        results.append(rows * cols)
+9
+    return results
+10
+11
+T = int(input())
+12
+inputs = [tuple(map(int, input().split())) for _ in range(T)]
+13
+14
+results = squarescaping(inputs)
+15
+16
+for result in results:
+17
+    print(result)",148,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870843
+1386870844,hardikj1511,unknown,unknown,"1
+def can_partition_odd_product(test_cases):
+2
+    results = []
+3
+    for N, A in test_cases:
+4
+        # Count the number of odd numbers in the array
+5
+        odd_count = sum(1 for x in A if x % 2 != 0)
+6
+        # If there are at least 2 odd numbers, we can partition
+7
+        if odd_count >= 2:
+8
+            results.append(""YES"")
+9
+        else:
+10
+            results.append(""NO"")
+11
+    return results
+12
+13
+# Input reading
+14
+import sys
+15
+input = sys.stdin.read
+16
+data = input().split()
+17
+18
+T = int(data[0])
+19
+index = 1
+20
+test_cases = []
+21
+22
+for _ in range(T):
+23
+    N = int(data[index])
+24
+    index += 1
+25
+    A = list(map(int, data[index:index + N]))
+26
+    index += N
+27
+    test_cases.append((N, A))
+28
+29
+# Get the results
+30
+results = can_partition_odd_product(test_cases)
+31
+32
+# Output results
+33
+sys.stdout.write(""\n"".join(results) + ""\n"")
+34",148,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870844
+1386870842,majorsecretx,unknown,unknown,"1
+def can_partition_for_odd_multiplication(A):
+2
+    even_sum = 0
+3
+    odd_sum = 0
+4
+5
+    for num in A:
+6
+        if num % 2 == 0:
+7
+            even_sum += num
+8
+        else:
+9
+            odd_sum += num
+10
+11
+    if even_sum % 2 == 0 and odd_sum % 2 == 0:
+12
+        return False
+13
+14
+15
+    return True
+16
+17
+if __name__ == ""__main__"":
+18
+    T = int(input()) 
+19
+20
+    for _ in range(T):
+21
+        N = int(input()) 
+22
+        A = list(map(int, input().split()))
+23
+24
+        if can_partition_for_odd_multiplication(A):
+25
+            print(""YES"")
+26
+        else:
+27
+            print(""NO"")",148,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870842
+1386870839,shravantiwari281,unknown,unknown,"1
+def squarescaping(inputs):
+2
+    results = []
+3
+    for case in inputs:
+4
+        M, N, A = case
+5
+        6
+        rows = (M + A - 1) // A
+7
+        cols = (N + A - 1) // A
+8
+        results.append(rows * cols)
+9
+    return results
+10
+11
+T = int(input())
+12
+inputs = [tuple(map(int, input().split())) for _ in range(T)]
+13
+14
+results = squarescaping(inputs)
+15
+16
+for result in results:
+17
+    print(result)",148,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870839
+1386870841,rudra07032004,unknown,unknown,"1
+def squarescaping(inputs):
+2
+    results = []
+3
+    for case in inputs:
+4
+        M, N, A = case
+5
+        6
+        rows = (M + A - 1) // A
+7
+        cols = (N + A - 1) // A
+8
+        results.append(rows * cols)
+9
+    return results
+10
+11
+T = int(input())
+12
+inputs = [tuple(map(int, input().split())) for _ in range(T)]
+13
+14
+results = squarescaping(inputs)
+15
+16
+for result in results:
+17
+    print(result)",148,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870841
+1386870836,jharishabh2k3,unknown,unknown,"1
+import math
+2
+3
+def fun(T, test_cases):
+4
+    res = []
+5
+    for M, N, A in test_cases:
+6
+        pieces_length = math.ceil(M / A)
+7
+        pieces_width = math.ceil(N / A)
+8
+        res.append(pieces_length * pieces_width)
+9
+    return res
+10
+11
+T = int(input())
+12
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+13
+res = fun(T, test_cases)
+14
+15
+for re in res:
+16
+    print(re)
+17",148,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870836
+1386870831,shlokpednekar_21,unknown,unknown,"1
+import math
+2
+3
+4
+T = int(input())
+5
+results = []
+6
+7
+for x in range(T):
+8
+    M,N,A = map(int, input().split())
+9
+    rows =(M+A-1) // A
+10
+    cols =(N+A-1) // A
+11
+    results.append(rows * cols)
+12
+13
+for result in results:
+14
+    print(result)
+15",148,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870831
+1386870832,siddharthbabel01,unknown,unknown,"1
+// Problem: Squarescaping
+2
+// Contest: HackerRank - TCET Shastra Coding Contest 1-A
+3
+// URL: https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping
+4
+// Memory Limit: 512 MB
+5
+// Time Limit: 4000 ms
+6
+// 
+7
+// Powered by CP Editor (https://cpeditor.org)
+8
+9
+#include <bits/stdc++.h>
+10
+using namespace std;
+11
+#define FAST_IO             (ios_base:: sync_with_stdio(false),cin.tie(NULL));
+12
+13
+//stls
+14
+#define pii                 pair<int, int>
+15
+#define vi                  vector<int>
+16
+#define vll                 vector<ll>
+17
+#define vvi                 vector<vector<int>>
+18
+#define vvl                 vector<vector<ll>>
+19
+20
+// Short forms
+21
+#define ll                  long long
+22
+#define ull                 unsigned long long
+23
+#define nl                  '\n'
+24
+#define ff                  first
+25
+#define ss                  second
+26
+#define all(x)              x.begin(), x.end()
+27
+#define sz(x)               (int)(x).size()
+28
+#define pb                  push_back
+29
+#define mp                  make_pair
+30
+31
+32
+////////////////////////////////////////////////////////////////
+33
+34
+void solve()
+35
+{
+36
+    int m,n,a;
+37
+    cin>>m>>n>>a;
+38
+    int l = floor((m+a-1)/a);
+39
+    int w = floor((n+a-1)/a);
+40
+    int res = l*w;
+41
+    cout<< res<<endl;
+42
+    43
+}
+44
+45
+46
+47
+int main()
+48
+{
+49
+    FAST_IO;
+50
+    int TC = 1;
+51
+    cin >> TC;
+52
+    while (TC--) solve();
+53
+}",148,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870832
+1386870835,rangrejd82,unknown,unknown,"1
+def calculate_min_cloth_pieces(M, N, A):
+2
+    # Calculate pieces needed in length and width
+3
+    pieces_length = (M + A - 1) // A
+4
+    pieces_width = (N + A - 1) // A
+5
+    6
+    # Total pieces needed is product of pieces in each dimension
+7
+    return pieces_length * pieces_width
+8
+9
+# Process input
+10
+T = int(input())
+11
+for _ in range(T):
+12
+    M, N, A = map(int, input().split())
+13
+    print(calculate_min_cloth_pieces(M, N, A))",148,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870835
+1386870830,adarshvijaysing1,unknown,unknown,"1
+import math
+2
+3
+def minimum_cloths(t, test_cases):
+4
+    results = []
+5
+    for case in test_cases:
+6
+        M, N, A = case
+7
+        # Calculate the number of cloths along each dimension
+8
+        cloths_along_length = (M + A - 1) // A  # Equivalent to math.ceil(M / A)
+9
+        cloths_along_width = (N + A - 1) // A  # Equivalent to math.ceil(N / A)
+10
+        # Total cloths required
+11
+        results.append(cloths_along_length * cloths_along_width)
+12
+    return results
+13
+14
+# Input
+15
+T = int(input())  # Number of test cases
+16
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+17
+18
+# Calculate and output results
+19
+results = minimum_cloths(T, test_cases)
+20
+for res in results:
+21
+    print(res)
+22",148,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870830

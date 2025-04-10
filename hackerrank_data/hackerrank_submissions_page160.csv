@@ -1,0 +1,555 @@
+submission_id,username,problem_name,language,code,page,url
+1386870651,purvi_vishwakar1,unknown,unknown,"1
+def min_cloth_pieces(M, N, A):
+2
+    pieces_along_length = (M + A - 1) // A
+3
+    pieces_along_width = (N + A - 1) // A
+4
+    5
+    total_pieces = pieces_along_length * pieces_along_width
+6
+7
+    return total_pieces
+8
+9
+if __name__ == ""__main__"":
+10
+    T = int(input())
+11
+12
+    for _ in range(T):
+13
+        M, N, A = map(int, input().split())
+14
+        result = min_cloth_pieces(M, N, A)
+15
+        print(result)",160,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870651
+1386870652,h1032221768,unknown,unknown,"1
+2
+def minimum_cloth_pieces(T, test_cases):
+3
+    results = []
+4
+    for t in range(T):
+5
+        M, N, A = test_cases[t]
+6
+    7
+        tiles_length = (M + A - 1) // A  
+8
+        tiles_width = (N + A - 1) // A 
+9
+        results.append(tiles_length * tiles_width)
+10
+    return results
+11
+12
+T = int(input())
+13
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+14
+15
+16
+results = minimum_cloth_pieces(T, test_cases)
+17
+for res in results:
+18
+    print(res)
+19",160,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870652
+1386870655,h1032231261,unknown,unknown,"1
+def min_cloth_pieces(M, N, A):
+2
+    """"""
+3
+    Calculates the minimum number of cloth pieces needed to cover an M x N land 
+4
+    using cloth pieces of size A x A.
+5
+6
+    Args:
+7
+        M: Width of the land.
+8
+        N: Length of the land.
+9
+        A: Size of each cloth piece.
+10
+11
+    Returns:
+12
+        The minimum number of cloth pieces needed.
+13
+    """"""
+14
+15
+    # Calculate the number of cloth pieces needed along each dimension
+16
+    pieces_along_width = (M + A - 1) // A
+17
+    pieces_along_length = (N + A - 1) // A
+18
+19
+    # Calculate the total number of cloth pieces needed
+20
+    total_pieces = pieces_along_width * pieces_along_length
+21
+22
+    return total_pieces
+23
+24
+if __name__ == ""__main__"":
+25
+    T = int(input())
+26
+27
+    for _ in range(T):
+28
+        M, N, A = map(int, input().split())
+29
+        result = min_cloth_pieces(M, N, A)
+30
+        print(result)",160,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870655
+1386870647,jayyprakashhyad1,unknown,unknown,"1
+// Problem: Squarescaping
+2
+// Contest: HackerRank - TCET Shastra Coding Contest 1-A
+3
+// URL: https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping
+4
+// Memory Limit: 512 MB
+5
+// Time Limit: 4000 ms
+6
+// 
+7
+// Powered by CP Editor (https://cpeditor.org)
+8
+9
+#include <bits/stdc++.h>
+10
+#include <ext/pb_ds/assoc_container.hpp>
+11
+#include <ext/pb_ds/tree_policy.hpp>
+12
+#include <ext/pb_ds/detail/standard_policies.hpp>
+13
+#include <cmath>
+14
+#define int long long int
+15
+#define pb push_back
+16
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+17
+/*ASCII small case-> a-97 to z-122
+18
+upper case-> A-65 to Z-90*/
+19
+#define nl ""\n""
+20
+#define mp map<int, int>
+21
+#define all(v) v.begin(), v.end()
+22
+#define F first
+23
+#define S second
+24
+#define ump unordered_map<long long, int, custom_hash>
+25
+#define mstpi multiset<pair<int, int> >
+26
+#define mst multiset<int>
+27
+#define vec vector<int>
+28
+#define pi pair<int, int>
+29
+#define ld long double
+30
+#define vep vector<pair<int, int>>
+31
+#define ul unsigned long long
+32
+#define loop1 for (int i = 0; i < n; i++)
+33
+#define REP(i, a, b) for (int i = a; i <= b; i++)
+34
+#define NO cout << ""NO"" << endl
+35
+#define YES cout << ""YES"" << endl
+36
+using namespace std;
+37
+using namespace __gnu_pbds;
+38
+typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update>ordered_set; //find_by_order, order_of_key, greater_equal<int> -> making it desc order
+39
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+40
+const double PI = 3.1415926535;
+41
+const int inf = 1e18;
+42
+const int mod = 1000000007;
+43
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+44
+int modmul(int a, int b, int m)
+45
+{
+46
+    a %= m;
+47
+    b %= m;
+48
+    return (a * b) % m;
+49
+}
+50
+int modexp(int n, int x)
+51
+{
+52
+    int ans = 1;
+53
+    while (n > 0)
+54
+    {
+55
+        if (n & 1)
+56
+        {
+57
+            ans = (ans * x) % mod;
+58
+        }
+59
+        n >>= 1;
+60
+        x = (x * x) % mod;
+61
+    }
+62
+    return ans;
+63
+}
+64
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+65
+string add(string a, string b)
+66
+{
+67
+    string ans = """";
+68
+    int carry = 0;
+69
+    while (!a.empty() || !b.empty() || carry > 0)
+70
+    {
+71
+        int digitA = a.empty() ? 0 : a.back() - '0';
+72
+        int digitB = b.empty() ? 0 : b.back() - '0';
+73
+        int sum = digitA + digitB + carry;
+74
+        ans = to_string(sum % 10) + ans;
+75
+        carry = sum / 10;
+76
+        if (!a.empty())
+77
+            a.pop_back();
+78
+        if (!b.empty())
+79
+            b.pop_back();
+80
+    }
+81
+    return ans;
+82
+}
+83
+string ministrnum(string a, string b)
+84
+{
+85
+    if (a.length() > b.length())
+86
+        return b;
+87
+    else if (b.length() > a.length())
+88
+        return a;
+89
+    else
+90
+    {
+91
+        int n = a.length();
+92
+        for (int i = 0; i < n; i++)
+93
+        {
+94
+            if (a[i] > b[i])
+95
+                return b;
+96
+            else if (a[i] < b[i])
+97
+                return a;
+98
+        }
+99
+    }
+100
+    return a;
+101
+}
+102
+void solve()
+103
+{
+104
+    int n, m, a;
+105
+    cin>>n>>m>>a;
+106
+    int ans = (n + a - 1)/a * (m + a - 1)/a;
+107
+    cout<<ans<<endl;
+108
+}
+109
+int32_t main()
+110
+{
+111
+    ios_base ::sync_with_stdio(0);
+112
+    cin.tie(0);
+113
+    cout.tie(0);
+114
+    int t = 1;
+115
+    cin >> t;
+116
+    while (t--)
+117
+        solve();
+118
+}",160,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870647
+1386870648,h1032220104,unknown,unknown,"1
+import math
+2
+3
+T = int(input())
+4
+5
+for _ in range(T):
+6
+7
+    M, N, A = map(int, input().split())
+8
+9
+    print(math.ceil(M / A) * math.ceil(N / A))",160,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870648
+1386870650,parshadk04,unknown,unknown,"1
+def minimum_cloth_pieces(T, test_cases):
+2
+    results = []
+3
+    for case in test_cases:
+4
+        M, N, A = case
+5
+        rows = (M + A - 1) // A  
+6
+        cols = (N + A - 1) // A  
+7
+        results.append(rows * cols)
+8
+    return results
+9
+T = int(input())
+10
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+11
+12
+output = minimum_cloth_pieces(T, test_cases)
+13
+for result in output:
+14
+    print(result)",160,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870650
+1386870644,hardikj1511,unknown,unknown,"1
+import math
+2
+3
+def min_cloth_pieces(test_cases):
+4
+    results = []
+5
+    for case in test_cases:
+6
+        M, N, A = case
+7
+        # Calculate the number of pieces required in each dimension
+8
+        num_pieces_length = math.ceil(M / A)
+9
+        num_pieces_width = math.ceil(N / A)
+10
+        # Total number of pieces
+11
+        total_pieces = num_pieces_length * num_pieces_width
+12
+        results.append(total_pieces)
+13
+    return results
+14
+15
+# Input reading
+16
+T = int(input())
+17
+test_cases = []
+18
+for _ in range(T):
+19
+    M, N, A = map(int, input().split())
+20
+    test_cases.append((M, N, A))
+21
+22
+# Get the results
+23
+results = min_cloth_pieces(test_cases)
+24
+25
+# Output results
+26
+for res in results:
+27
+    print(res)
+28",160,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870644
+1386870643,pandeyshreya358,unknown,unknown,"1
+def calculate_min_cloth_pieces(M, N, A):
+2
+    # Calculate pieces needed in length and width
+3
+    pieces_length = (M + A - 1) // A
+4
+    pieces_width = (N + A - 1) // A
+5
+    6
+    # Total pieces needed is product of pieces in each dimension
+7
+    return pieces_length * pieces_width
+8
+9
+# Process input
+10
+T = int(input())
+11
+for _ in range(T):
+12
+    M, N, A = map(int, input().split())
+13
+    print(calculate_min_cloth_pieces(M, N, A))",160,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870643
+1386870645,kerissapatel,unknown,unknown,"1
+import math
+2
+3
+def min_cloth_pieces(test_cases):
+4
+    results = []
+5
+    for M, N, A in test_cases:
+6
+        # Calculate the number of cloth pieces needed in each dimension
+7
+        pieces_along_length = math.ceil(M / A)
+8
+        pieces_along_width = math.ceil(N / A)
+9
+        10
+        # Total pieces needed
+11
+        results.append(pieces_along_length * pieces_along_width)
+12
+    return results
+13
+14
+# Input
+15
+T = int(input())
+16
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+17
+18
+# Compute results
+19
+results = min_cloth_pieces(test_cases)
+20
+21
+# Output results
+22
+for res in results:
+23
+    print(res)
+24",160,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870645
+1386870642,upadhyaydhruv439,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+9
+int main() {
+10
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+11
+    int t; 
+12
+    cin >> t;  // Read the number of test cases
+13
+    14
+    while (t--) {
+15
+        long long m, n, a;
+16
+        cin >> m >> n >> a;  // Read dimensions M, N and side length A
+17
+        18
+        // Calculate the number of cloth pieces required
+19
+        long long lengthPieces = (m + a - 1) / a; // Equivalent to ceil(m / a)
+20
+        long long widthPieces = (n + a - 1) / a;  // Equivalent to ceil(n / a)
+21
+        long long result = lengthPieces * widthPieces;
+22
+        23
+        // Output the result
+24
+        cout << result << endl;
+25
+    }
+26
+    return 0;
+27
+}
+28",160,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870642

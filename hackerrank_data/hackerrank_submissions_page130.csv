@@ -1,0 +1,357 @@
+submission_id,username,problem_name,language,code,page,url
+1386871082,singhastha182004,unknown,unknown,"1
+def count_non_empty_subsets(T, test_cases):
+2
+    results = []
+3
+    for N in test_cases:
+4
+       5
+        total_non_empty_subsets = (1 << N) - 1
+6
+        results.append(total_non_empty_subsets)
+7
+    return results
+8
+9
+10
+T = int(input())
+11
+test_cases = [int(input()) for _ in range(T)]
+12
+13
+14
+results = count_non_empty_subsets(T, test_cases)
+15
+for result in results:
+16
+    print(result)",130,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871082
+1386871083,shifalisingh181,unknown,unknown,"1
+import math
+2
+3
+def minimum_cloth_pieces(t, test_cases):
+4
+    results = []
+5
+    for case in test_cases:
+6
+        M, N, A = case
+7
+       8
+        pieces_length = math.ceil(M / A)
+9
+        pieces_width = math.ceil(N / A)
+10
+     11
+        results.append(pieces_length * pieces_width)
+12
+    return results
+13
+14
+15
+if __name__ == ""__main__"":
+16
+    T = int(input().strip())
+17
+    test_cases = []
+18
+    for _ in range(T):
+19
+        M, N, A = map(int, input().strip().split())
+20
+        test_cases.append((M, N, A))
+21
+    22
+   23
+    results = minimum_cloth_pieces(T, test_cases)
+24
+    25
+  26
+    for result in results:
+27
+        print(result)",130,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871083
+1386871086,kerissapatel,unknown,unknown,"1
+import sys
+2
+input = sys.stdin.read
+3
+4
+def can_partition(test_cases):
+5
+    results = []
+6
+    for _, arr in test_cases:
+7
+        odd_count = sum(1 for x in arr if x % 2 != 0)
+8
+        # We need at least 2 odd numbers for a valid partition
+9
+        if odd_count >= 2:
+10
+            results.append(""YES"")
+11
+        else:
+12
+            results.append(""NO"")
+13
+    return results
+14
+15
+# Efficient Input Reading
+16
+data = input().split()
+17
+T = int(data[0])
+18
+test_cases = []
+19
+idx = 1
+20
+21
+for _ in range(T):
+22
+    N = int(data[idx])
+23
+    idx += 1
+24
+    arr = list(map(int, data[idx:idx + N]))
+25
+    idx += N
+26
+    test_cases.append((N, arr))
+27
+28
+# Process each test case
+29
+results = can_partition(test_cases)
+30
+31
+# Output results
+32
+sys.stdout.write(""\n"".join(results) + ""\n"")
+33
+34",130,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871086
+1386871080,jaychvn2808,unknown,unknown,"1
+def calculate_min_cloth_pieces(M, N, A):
+2
+    # Calculate pieces needed in length and width
+3
+    pieces_length = (M + A - 1) // A
+4
+    pieces_width = (N + A - 1) // A
+5
+    6
+    # Total pieces needed is product of pieces in each dimension
+7
+    return pieces_length * pieces_width
+8
+9
+# Process input
+10
+T = int(input())
+11
+for _ in range(T):
+12
+    M, N, A = map(int, input().split())
+13
+    print(calculate_min_cloth_pieces(M, N, A))",130,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871080
+1386871081,vrushankvyas248,unknown,unknown,"1
+import math
+2
+t = int(input())
+3
+for i in range(t):
+4
+    5
+    m,n,a = map(int,input().split())
+6
+    7
+    hor = math.ceil(m/a)
+8
+    ver = math.ceil(n/a)
+9
+    10
+    11
+    print(hor*ver)",130,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871081
+1386871077,simran_verma1081,unknown,unknown,"1
+import math
+2
+3
+def minimum_cloth_pieces(T, test_cases):
+4
+    results = []
+5
+    for case in test_cases:
+6
+        M, N, A = case
+7
+        rows = math.ceil(M / A)
+8
+        cols = math.ceil(N / A)
+9
+        results.append(rows * cols)
+10
+    return results
+11
+12
+T = int(input())
+13
+test_cases = []
+14
+for _ in range(T):
+15
+    test_cases.append(tuple(map(int, input().split())))
+16
+17
+results = minimum_cloth_pieces(T, test_cases)
+18
+for result in results:
+19
+    print(result)",130,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871077
+1386871074,sumeetshah107,unknown,unknown,"1
+# Function to calculate the total number of non-empty subsets
+2
+def count_non_empty_subsets(T, test_cases):
+3
+    results = []
+4
+    for N in test_cases:
+5
+        if N == 0:
+6
+            results.append(0)  # If the set has 0 elements, no subsets exist
+7
+        else:
+8
+            # Total subsets = 2^N, excluding the empty set = 2^N - 1
+9
+            total_subsets = (2 ** N) - 1
+10
+            results.append(total_subsets)
+11
+    return results
+12
+13
+# Input reading
+14
+T = int(input())  # Number of test cases
+15
+test_cases = [int(input()) for _ in range(T)]
+16
+17
+# Process and output results
+18
+results = count_non_empty_subsets(T, test_cases)
+19
+for result in results:
+20
+    print(result)
+21",130,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871074
+1386871075,bhooomikapal10,unknown,unknown,"1
+import math
+2
+3
+def minimum_cloth_pieces(test_cases):
+4
+    results = []
+5
+    for M, N, A in test_cases:
+6
+        pieces_length = (M + A - 1) // A  # Equivalent to ceil(M / A)
+7
+        pieces_width = (N + A - 1) // A  # Equivalent to ceil(N / A)
+8
+        results.append(pieces_length * pieces_width)
+9
+    return results
+10
+11
+# Input handling
+12
+T = int(input())
+13
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+14
+15
+# Solve and print results
+16
+results = minimum_cloth_pieces(test_cases)
+17
+for res in results:
+18
+    print(res)
+19",130,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871075
+1386871076,h1032231261,unknown,unknown,"1
+# Function to solve each test case
+2
+def solve(test_cases):
+3
+    results = []
+4
+    for case in test_cases:
+5
+        N, A = case
+6
+        odd_count = sum(1 for x in A if x % 2 != 0)  # Count odd numbers
+7
+        if odd_count >= 2:
+8
+            results.append(""YES"")
+9
+        else:
+10
+            results.append(""NO"")
+11
+    return results
+12
+13
+# Reading input
+14
+def main():
+15
+    T = int(input())  # Read number of test cases
+16
+    test_cases = []
+17
+    18
+    for _ in range(T):
+19
+        N = int(input())  # Read number of integers in the current test case
+20
+        A = list(map(int, input().split()))  # Read the list of integers
+21
+        test_cases.append((N, A))
+22
+    23
+    # Solve the test cases
+24
+    results = solve(test_cases)
+25
+    26
+    # Output the results
+27
+    print(""\n"".join(results))
+28
+29
+# Run the program
+30
+if __name__ == ""__main__"":
+31
+    main()
+32",130,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871076
+1386871073,jharishabh2k3,unknown,unknown,"1
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+2
+3
+import math
+4
+i = int(input())
+5
+while i:
+6
+    j = int(input())
+7
+    print(int(math.pow(2, j) - 1))
+8
+    i -= 1",130,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871073

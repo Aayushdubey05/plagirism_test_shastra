@@ -1,0 +1,327 @@
+submission_id,username,problem_name,language,code,page,url
+1386871640,h1032220354,unknown,unknown,"1
+def unique_subset(testcases):
+2
+    result=[]
+3
+    for num in testcases:
+4
+        val=(2**num)-1
+5
+        result.append(val)
+6
+    return result
+7
+8
+T=int(input())
+9
+10
+Testcases=[int(input())for _ in range(T)]
+11
+12
+result=unique_subset(Testcases)
+13
+14
+for res in result:
+15
+    print(res)",86,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871640
+1386871639,sanketram75,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+9
+int main() {
+10
+    int T;
+11
+    cin >> T;
+12
+13
+    while (T--) {
+14
+        int N;
+15
+        cin >> N;
+16
+        vector<int> A(N);
+17
+18
+        int odd_count = 0;
+19
+        for (int i = 0; i < N; i++) {
+20
+            cin >> A[i];
+21
+            if (A[i] % 2 != 0) {
+22
+                odd_count++;
+23
+            }
+24
+        }
+25
+26
+        27
+        if (odd_count >= 2 && (odd_count % 2 == 0)) {
+28
+            cout << ""YES\n"";
+29
+        } else {
+30
+            cout << ""NO\n"";
+31
+        }
+32
+    }
+33
+34
+    return 0;
+35
+}",86,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871639
+1386871642,anuragt1604,unknown,unknown,"1
+def can_partition(arr):
+2
+    n = len(arr)
+3
+    total_sum = sum(arr)
+4
+    5
+    for mask in range(1, (1 << n) - 1):
+6
+        sum1 = 0
+7
+        for i in range(n):
+8
+            if mask & (1 << i):
+9
+                sum1 += arr[i]
+10
+        sum2 = total_sum - sum1
+11
+        if sum1 * sum2 % 2 == 1:
+12
+            return True
+13
+    return False
+14
+15
+t = int(input())
+16
+results = []
+17
+18
+for _ in range(t):
+19
+    n = int(input())
+20
+    arr = list(map(int, input().split()))
+21
+    results.append(""YES"" if can_partition(arr) else ""NO"")
+22
+23
+for result in results:
+24
+    print(result)",86,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871642
+1386871637,saurabhaaaayadav,unknown,unknown,"1
+import java.io.*;
+2
+import java.util.*;
+3
+4
+public class Solution {
+5
+6
+    public static void main(String[] args) {
+7
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+8
+        9
+10
+        Scanner scanner = new Scanner(System.in);
+11
+12
+        13
+        int T = scanner.nextInt();
+14
+15
+       16
+        for (int t = 0; t < T; t++) {
+17
+            int N = scanner.nextInt();
+18
+19
+           20
+            long totalSubsets = (long) Math.pow(2, N) - 1;
+21
+22
+            23
+            System.out.println(totalSubsets);
+24
+        }
+25
+26
+    }
+27
+}",86,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871637
+1386871635,h1032221727,unknown,unknown,"1
+import math
+2
+3
+T = int(input())
+4
+for _ in range(T):
+5
+    N = int(input())
+6
+    print((1 << N) - 1)",86,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871635
+1386871638,yuv5803,unknown,unknown,"1
+#include <iostream>
+2
+#include <cmath>
+3
+using namespace std;
+4
+int main() {
+5
+    int T ;
+6
+    cin >> T ; 
+7
+    while (T--) {
+8
+        int N ;
+9
+        cin >> N ; 
+10
+        if (N == 0) {
+11
+            cout << 0 << endl ; 
+12
+        } else {
+13
+            cout << (1 << N) - 1 << endl ; 
+14
+        }
+15
+    }
+16
+    return 0;
+17
+}
+18",86,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871638
+1386871631,harshpal1905,unknown,unknown,"1
+def solve_test_case(N, A):
+2
+    odd_sum = sum(x for x in A if x % 2)
+3
+    even_sum = sum(x for x in A if x % 2 == 0)
+4
+    5
+    for i in range(N):
+6
+        if A[i] % 2:  
+7
+            s1 = A[i]
+8
+            remaining_odd = odd_sum - s1
+9
+            if remaining_odd > 0 and s1 * remaining_odd % 2 == 1:
+10
+                return ""YES""
+11
+    12
+    return ""NO""
+13
+14
+T = int(input())
+15
+for _ in range(T):
+16
+    N = int(input())
+17
+    A = list(map(int, input().split()))
+18
+    print(solve_test_case(N, A))",86,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871631
+1386871633,tanishkini,unknown,unknown,"1
+import math
+2
+3
+def min_cloth_pieces(M, N, A):
+4
+    """"""
+5
+    Calculate the minimum number of cloth pieces of size A x A required
+6
+    to cover a land of size M x N.
+7
+    """"""
+8
+    # Calculate the number of cloth pieces needed along the length (M) and width (N)
+9
+    pieces_along_length = math.ceil(M / A)
+10
+    pieces_along_width = math.ceil(N / A)
+11
+    12
+    # Total pieces required
+13
+    return pieces_along_length * pieces_along_width
+14
+15
+# Input reading
+16
+T = int(input())  # Number of test cases
+17
+results = []
+18
+19
+for _ in range(T):
+20
+    M, N, A = map(int, input().split())
+21
+    results.append(min_cloth_pieces(M, N, A))
+22
+23
+# Output results
+24
+for res in results:
+25
+    print(res)",86,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871633
+1386871634,anushkambtech,unknown,unknown,"1
+testcases = int(input())
+2
+for test in range(testcases):
+3
+    given_input = input().strip().split("" "")
+4
+    m , n , a = [int(num) for num in given_input]
+5
+    if a**2 >= m*n:
+6
+        print(1)
+7
+    else:
+8
+        pieces_length = (m+a-1)/a
+9
+        pieces_width = (n+a-1)/a
+10
+        print(int(pieces_length * pieces_width))",86,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871634
+1386871630,jhar27018,unknown,unknown,"1
+t = int(input())
+2
+for _ in range(t):
+3
+   n = int(input())
+4
+   print(2**n-1)",86,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871630

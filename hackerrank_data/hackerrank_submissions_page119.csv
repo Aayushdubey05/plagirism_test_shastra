@@ -1,0 +1,386 @@
+submission_id,username,problem_name,language,code,page,url
+1386871219,rishabhstudy59,unknown,unknown,"1
+T = int(input())
+2
+results = []
+3
+4
+for _ in range(T):
+5
+    N = int(input())
+6
+    A = list(map(int, input().split()))
+7
+    odd_count = sum(1 for x in A if x % 2 != 0)
+8
+    if odd_count >= 2:
+9
+        results.append(""YES"")
+10
+    else:
+11
+        results.append(""NO"")
+12
+13
+for result in results:
+14
+    print(result)
+15",119,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871219
+1386871220,saurabha_srs75,unknown,unknown,"1
+def can_partition_into_odd_product(test_cases):
+2
+    results = []
+3
+    for n, arr in test_cases:
+4
+        # Count the number of odd numbers in the array
+5
+        odd_count = sum(1 for x in arr if x % 2 != 0)
+6
+        7
+        # We need at least two odd numbers to partition into two subsequences with odd sums
+8
+        if odd_count >= 2:
+9
+            results.append(""YES"")
+10
+        else:
+11
+            results.append(""NO"")
+12
+    return results
+13
+14
+# Input reading
+15
+T = int(input())  # Number of test cases
+16
+test_cases = []
+17
+for _ in range(T):
+18
+    N = int(input())  # Number of integers
+19
+    A = list(map(int, input().split()))
+20
+    test_cases.append((N, A))
+21
+22
+# Process and output results
+23
+results = can_partition_into_odd_product(test_cases)
+24
+for result in results:
+25
+    print(result)",119,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871220
+1386871221,deeptisunilsing1,unknown,unknown,"1
+def count_non_empty_subsets(n):
+2
+    # Total subsets = 2^N, excluding empty set = 2^N - 1
+3
+    return (1 << n) - 1
+4
+5
+if __name__ == ""__main__"":
+6
+    t = int(input())  # Number of test cases
+7
+    results = []
+8
+9
+    for _ in range(t):
+10
+        n = int(input())  # Size of the set
+11
+        results.append(count_non_empty_subsets(n))
+12
+13
+    print(""\n"".join(map(str, results)))
+14",119,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871221
+1386871217,aggarwalkartike1,unknown,unknown,"1
+import math
+2
+3
+def min_cloth_pieces(M, N, A):
+4
+    """"""
+5
+    Calculate the minimum number of cloth pieces of size A x A required
+6
+    to cover a land of size M x N.
+7
+    """"""
+8
+    # Calculate the number of cloth pieces needed along the length (M) and width (N)
+9
+    pieces_along_length = math.ceil(M / A)
+10
+    pieces_along_width = math.ceil(N / A)
+11
+    12
+    # Total pieces required
+13
+    return pieces_along_length * pieces_along_width
+14
+15
+# Input reading
+16
+T = int(input())  # Number of test cases
+17
+results = []
+18
+19
+for _ in range(T):
+20
+    M, N, A = map(int, input().split())
+21
+    results.append(min_cloth_pieces(M, N, A))
+22
+23
+# Output results
+24
+for res in results:
+25
+    print(res)",119,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386871217
+1386871216,psthefreak,unknown,unknown,"1
+import java.util.*;
+2
+3
+public class Main {
+4
+    public static void main(String[] args) {
+5
+        Scanner sc = new Scanner(System.in);
+6
+        int T = sc.nextInt();
+7
+        8
+        while (T-- > 0) {
+9
+            int N = sc.nextInt();
+10
+            int[] A = new int[N];
+11
+            12
+            // Count odd numbers
+13
+            int oddCount = 0;
+14
+            for (int i = 0; i < N; i++) {
+15
+                A[i] = sc.nextInt();
+16
+                if (A[i] % 2 == 1) oddCount++;
+17
+            }
+18
+            19
+            // Need at least 2 odd numbers to get an odd product
+20
+            System.out.println(oddCount >= 2 ? ""YES"" : ""NO"");
+21
+        }
+22
+        sc.close();
+23
+    }
+24
+}",119,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871216
+1386871218,dhirajkalwar57,unknown,unknown,"1
+T = int(input())
+2
+results = []
+3
+4
+for _ in range(T):
+5
+    6
+    N = int(input())
+7
+    8
+    A = list(map(int, input().split()))
+9
+    10
+    11
+    odd_count = sum(1 for x in A if x % 2 != 0)
+12
+    13
+    14
+    if odd_count >= 2:
+15
+        results.append(""YES"")
+16
+    else:
+17
+        results.append(""NO"")
+18
+19
+20
+print(""\n"".join(results))",119,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871218
+1386871211,sakshimashalkar1,unknown,unknown,"1
+import java.util.Scanner;
+2
+3
+public class Solution {
+4
+5
+    public static void main(String[] args) {
+6
+        Scanner scanner = new Scanner(System.in);
+7
+        8
+        // Read the number of test cases
+9
+        int T = scanner.nextInt();
+10
+        11
+        // Iterate through each test case
+12
+        while (T-- > 0) {
+13
+            int N = scanner.nextInt(); // Number of elements in the set
+14
+            15
+            int oddCount = 0;
+16
+            // Read the array and count the odd numbers
+17
+            for (int i = 0; i < N; i++) {
+18
+                int A = scanner.nextInt();
+19
+                if (A % 2 != 0) {
+20
+                    oddCount++;
+21
+                }
+22
+            }
+23
+            24
+            // If there are at least two odd numbers, we can partition the array into two subsequences with odd sums
+25
+            if (oddCount >= 2) {
+26
+                System.out.println(""YES"");
+27
+            } else {
+28
+                System.out.println(""NO"");
+29
+            }
+30
+        }
+31
+        32
+        scanner.close();
+33
+    }
+34
+}
+35",119,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871211
+1386871213,purvi_vishwakar1,unknown,unknown,"1
+def can_partition_odd_product(A):
+2
+    """"""
+3
+    Checks if the given array can be partitioned into two subsequences 
+4
+    such that the product of their sums is odd.
+5
+6
+    Args:
+7
+      A: The input array of integers.
+8
+9
+    Returns:
+10
+      ""YES"" if possible, ""NO"" otherwise.
+11
+    """"""
+12
+13
+    # Check if there are any odd numbers in the array
+14
+    has_odd = any(num % 2 == 1 for num in A)
+15
+16
+    # If there are no odd numbers, it's impossible to have an odd product
+17
+    if not has_odd:
+18
+        return ""NO""
+19
+20
+    # If there's only one odd number, it's impossible to have an odd product
+21
+    if sum(num % 2 for num in A) == 1: 
+22
+        return ""NO""
+23
+24
+    # Otherwise, it's always possible to create an odd product
+25
+    return ""YES""
+26
+27
+if __name__ == ""__main__"":
+28
+    T = int(input())
+29
+30
+    for _ in range(T):
+31
+        N = int(input())
+32
+        A = list(map(int, input().split()))
+33
+        print(can_partition_odd_product(A))",119,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386871213
+1386871214,h1032221491,unknown,unknown,"1
+from itertools import chain, combinations
+2
+3
+def get_all_subsets(s):
+4
+     Generate all subsets using combinations
+5
+    subsets = list(chain.from_iterable(combinations(s, r) for r in range(len(s) + 1)))
+6
+    return subsets
+7
+8
+def count_non_empty_subsets(s):
+9
+    all_subsets = get_all_subsets(s)
+10
+    non_empty_subsets = [subset for subset in all_subsets if len(subset) > 0]
+11
+    return len(non_empty_subsets), non_empty_subsets
+12
+13
+14
+input_set = {'a'}
+15
+16
+17
+total_non_empty, non_empty_subsets = count_non_empty_subsets(input_set)
+18
+19
+print(""All subsets:"", get_all_subsets(input_set))
+20
+print(""Non-empty subsets:"", non_empty_subsets)
+21
+print(""Number of unique non-empty subsets:"", total_non_empty)
+22",119,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871214
+1386871210,anuragpande006,unknown,unknown,"1
+import math
+2
+3
+T = int(input())
+4
+for _ in range(T):
+5
+    N = int(input())
+6
+    print((1 << N) - 1)",119,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386871210

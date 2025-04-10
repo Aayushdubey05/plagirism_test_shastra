@@ -1,0 +1,412 @@
+submission_id,username,problem_name,language,code,page,url
+1386872153,shlok29_2004onl1,unknown,unknown,"1
+def can_partition_with_odd_product(T, test_cases):
+2
+    results = []
+3
+    for case in test_cases:
+4
+        N, A = case
+5
+        odd_count = sum(1 for x in A if x % 2 != 0)  # Count odd numbers
+6
+        if odd_count >= 2:  # At least 2 odd numbers are needed
+7
+            results.append(""YES"")
+8
+        else:
+9
+            results.append(""NO"")
+10
+    return results
+11
+12
+# Input processing
+13
+import sys
+14
+input = sys.stdin.read
+15
+data = input().split()
+16
+T = int(data[0])
+17
+18
+test_cases = []
+19
+index = 1
+20
+for _ in range(T):
+21
+    N = int(data[index])
+22
+    index += 1
+23
+    A = list(map(int, data[index:index + N]))
+24
+    index += N
+25
+    test_cases.append((N, A))
+26
+27
+# Processing and output
+28
+results = can_partition_with_odd_product(T, test_cases)
+29
+sys.stdout.write(""\n"".join(results) + ""\n"")
+30",48,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872153
+1386872156,shaikhsaad497,unknown,unknown,"1
+import math
+2
+3
+def minimum_cloth_pieces():
+4
+    # Input number of test cases
+5
+    T = int(input())
+6
+    7
+    results = []
+8
+    9
+    for _ in range(T):
+10
+        # Read M, N, A for each test case
+11
+        M, N, A = map(int, input().split())
+12
+        13
+        # Calculate the number of squares required along each dimension
+14
+        length_pieces = math.ceil(M / A)
+15
+        width_pieces = math.ceil(N / A)
+16
+        17
+        # Total pieces required
+18
+        results.append(length_pieces * width_pieces)
+19
+    20
+    # Output results
+21
+    for result in results:
+22
+        print(result)
+23
+24
+# Run the function
+25
+minimum_cloth_pieces()
+26",48,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386872156
+1386872158,dheerajvishwaka2,unknown,unknown,"1
+def can_partition(test_cases):
+2
+    results = []
+3
+    for t in range(test_cases):
+4
+        n = int(input())  # Size of the array
+5
+        arr = map(int, input().split())  # Read array
+6
+        7
+        # Count odd numbers in the array
+8
+        odd_count = sum(1 for num in arr if num % 2 != 0)
+9
+10
+        # If there are at least 2 odd numbers, it's possible to partition
+11
+        if odd_count >= 2:
+12
+            results.append(""YES"")
+13
+        else:
+14
+            results.append(""NO"")
+15
+16
+    # Print all results at once for better performance
+17
+    print(""\n"".join(results))
+18
+19
+20
+# Input number of test cases
+21
+T = int(input())
+22
+can_partition(T)
+23",48,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872158
+1386872150,akshara_walia1,unknown,unknown,"1
+#include <iostream>
+2
+3
+using namespace std;
+4
+5
+int main() {
+6
+    int T;
+7
+    cin >> T;
+8
+    9
+    while (T--) {
+10
+        int N;
+11
+        cin >> N;
+12
+        // 2^N - 1 gives number of non-empty subsets
+13
+        // Using left shift for power of 2
+14
+        cout << (1LL << N) - 1 << endl;
+15
+    }
+16
+    17
+    return 0;
+18
+}
+19",48,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872150
+1386872151,shravanirm36,unknown,unknown,"1
+def can_partition_to_odd_product(nums):
+2
+    # Calculate the total sum of the array
+3
+    total_sum = sum(nums)
+4
+    5
+    # Check if total sum is odd
+6
+    if total_sum % 2 != 0:
+7
+        return ""NO""
+8
+    9
+    # Count the number of odd numbers in the array
+10
+    odd_count = sum(1 for num in nums if num % 2 != 0)
+11
+    12
+    # If there are no odd numbers, partitioning is not possible
+13
+    if odd_count == 0:
+14
+        return ""NO""
+15
+    16
+    # If both conditions are met, partitioning is possible
+17
+    return ""YES""
+18
+19
+# Input Handling
+20
+T = int(input())  # Number of test cases
+21
+results = []
+22
+23
+for _ in range(T):
+24
+    n = int(input())  # Size of the array
+25
+    nums = list(map(int, input().split()))
+26
+    # Check if partitioning is possible
+27
+    results.append(can_partition_to_odd_product(nums))
+28
+29
+# Output Results
+30
+for result in results:
+31
+    print(result)",48,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872151
+1386872152,ishakbtech,unknown,unknown,"1
+T = int(input())
+2
+results = []
+3
+for i in range(T):
+4
+    N = int(input())
+5
+    results.append((1<<N)-1)
+6
+    7
+for res in results:
+8
+    print(res)",48,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872152
+1386872146,shreyashgode77,unknown,unknown,"1
+def can_partition_odd_sum(T, test_cases):
+2
+    results = []
+3
+    for i in range(T):
+4
+        N = test_cases[i][0]
+5
+        arr = test_cases[i][1]
+6
+7
+        # Count the number of odd numbers in the array
+8
+        odd_count = sum(1 for num in arr if num % 2 == 1)
+9
+10
+        # For the product of sums to be odd, both sums must be odd
+11
+        # This is only possible if there are at least two odd numbers
+12
+        if odd_count >= 2:
+13
+            results.append(""YES"")
+14
+        else:
+15
+            results.append(""NO"")
+16
+17
+    return results
+18
+19
+# Input handling
+20
+T = int(input())
+21
+test_cases = []
+22
+for _ in range(T):
+23
+    N = int(input())
+24
+    arr = list(map(int, input().split()))
+25
+    test_cases.append((N, arr))
+26
+27
+output = can_partition_odd_sum(T, test_cases)
+28
+for res in output:
+29
+    print(res)
+30",48,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872146
+1386872147,avsingh02as02,unknown,unknown,"1
+import math
+2
+3
+# Function to calculate the minimum number of square pieces needed
+4
+def minimum_cloth_pieces(t, test_cases):
+5
+    results = []
+6
+    for case in test_cases:
+7
+        M, N, A = case
+8
+        # Calculate the number of pieces required for length and width
+9
+        pieces_length = math.ceil(M / A)
+10
+        pieces_width = math.ceil(N / A)
+11
+        # Total pieces required
+12
+        total_pieces = pieces_length * pieces_width
+13
+        results.append(total_pieces)
+14
+    return results
+15
+16
+# Input handling
+17
+t = int(input())
+18
+test_cases = []
+19
+for _ in range(t):
+20
+    M, N, A = map(int, input().split())
+21
+    test_cases.append((M, N, A))
+22
+23
+# Calculate and print results
+24
+results = minimum_cloth_pieces(t, test_cases)
+25
+for result in results:
+26
+    print(result)",48,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386872147
+1386872149,rayanubhav36,unknown,unknown,"1
+def partition_odd_sums(nums):
+2
+    total_sum=sum(nums)
+3
+    odd_count=sum(1 for x in arr if x%2!=0)
+4
+    5
+    if total_sum%2==0 and odd_count >=2:
+6
+        return ""YES""
+7
+    return ""NO""
+8
+9
+T=int(input())
+10
+for _ in range(T):
+11
+    N=int(input())
+12
+    arr=list(map(int,input().split()))
+13
+    print(partition_odd_sums(arr))
+14
+    ",48,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872149
+1386872145,nsnihalgoud123,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+9
+int main() {
+10
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+11
+    int t;
+12
+    cin>>t;
+13
+    while(t--) {
+14
+        int n;
+15
+        cin>>n;
+16
+        int count = pow(2,n)-1;
+17
+        cout<<count<<endl;
+18
+    }
+19
+    return 0;
+20
+}
+21",48,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872145

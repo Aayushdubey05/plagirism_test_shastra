@@ -1,0 +1,389 @@
+submission_id,username,problem_name,language,code,page,url
+1386870704,_youknowzair65,unknown,unknown,"1
+import java.util.Scanner;
+2
+3
+public class Main {
+4
+5
+    public static void main(String[] args) {
+6
+        Scanner scanner = new Scanner(System.in);
+7
+        8
+        // Read number of test cases
+9
+        int T = scanner.nextInt();
+10
+        11
+        // Iterate through each test case
+12
+        for (int i = 0; i < T; i++) {
+13
+            // Read M, N, A for the current test case
+14
+            long M = scanner.nextLong();
+15
+            long N = scanner.nextLong();
+16
+            long A = scanner.nextLong();
+17
+            18
+            // Calculate the number of cloths required along M and N
+19
+            long numClothsM = (M + A - 1) / A;
+20
+            long numClothsN = (N + A - 1) / A;
+21
+            22
+            // The total number of cloths is the product of both
+23
+            long totalCloths = numClothsM * numClothsN;
+24
+            25
+            // Output the result
+26
+            System.out.println(totalCloths);
+27
+        }
+28
+        29
+        // Close the scanner
+30
+        scanner.close();
+31
+    }
+32
+}",157,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870704
+1386870705,taichikarna,unknown,unknown,"1
+import math
+2
+3
+def min_cloth_pieces(T, test_cases):
+4
+    results = []
+5
+    6
+    for case in test_cases:
+7
+        M, N, A = case
+8
+        height_pieces = math.ceil(M / A)
+9
+        width_pieces = math.ceil(N / A)
+10
+        11
+        total_pieces = height_pieces * width_pieces
+12
+        results.append(total_pieces)
+13
+    14
+    return results
+15
+16
+T = int(input())  
+17
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+18
+19
+results = min_cloth_pieces(T, test_cases)
+20
+for result in results:
+21
+    print(result)
+22",157,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870705
+1386870706,singhyatharthsn,unknown,unknown,"1
+def squarescaping(inputs):
+2
+    results = []
+3
+    for case in inputs:
+4
+        M, N, A = case
+5
+        6
+        rows = (M + A - 1) // A
+7
+        cols = (N + A - 1) // A
+8
+        results.append(rows * cols)
+9
+    return results
+10
+11
+T = int(input())
+12
+inputs = [tuple(map(int, input().split())) for _ in range(T)]
+13
+14
+results = squarescaping(inputs)
+15
+16
+for result in results:
+17
+    print(result)
+18",157,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870706
+1386870697,sarkarsudeep0409,unknown,unknown,"1
+import math
+2
+3
+def min_squares(M, N, A):
+4
+    return math.ceil(M / A) * math.ceil(N / A)
+5
+6
+T = int(input())
+7
+8
+for _ in range(T):
+9
+    M, N, A = map(int, input().split())
+10
+    print(min_squares(M, N, A))",157,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870697
+1386870702,deeptisunilsing1,unknown,unknown,"1
+import math
+2
+3
+def squarescaping(test_cases):
+4
+    results = []
+5
+    for case in test_cases:
+6
+        M, N, A = case
+7
+        # Calculate the number of squares needed along each dimension
+8
+        rows = math.ceil(M / A)  # Number of rows of squares required
+9
+        cols = math.ceil(N / A)  # Number of columns of squares required
+10
+        # Total squares needed
+11
+        results.append(rows * cols)
+12
+    return results
+13
+14
+# Input reading
+15
+if __name__ == ""__main__"":
+16
+    T = int(input())  # Number of test cases
+17
+    test_cases = []
+18
+    for _ in range(T):
+19
+        M, N, A = map(int, input().split())
+20
+        test_cases.append((M, N, A))
+21
+    22
+    # Process test cases
+23
+    results = squarescaping(test_cases)
+24
+    for result in results:
+25
+        print(result)
+26",157,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870702
+1386870703,h1032220736,unknown,unknown,"1
+# Read input
+2
+import sys
+3
+input = sys.stdin.read
+4
+data = input().splitlines()
+5
+6
+# Number of test cases
+7
+T = int(data[0])
+8
+results = []
+9
+10
+# Process each test case
+11
+index = 1
+12
+for _ in range(T):
+13
+    # Read the size of the array
+14
+    N = int(data[index])
+15
+    index += 1
+16
+    # Read the array elements
+17
+    A = list(map(int, data[index].split()))
+18
+    index += 1
+19
+    20
+    # Count odd integers
+21
+    odd_count = sum(1 for x in A if x % 2 != 0)
+22
+    23
+    # Determine if partition is possible
+24
+    if odd_count >= 2:
+25
+        results.append(""YES"")
+26
+    else:
+27
+        results.append(""NO"")
+28
+29
+# Print results
+30
+sys.stdout.write(""\n"".join(results) + ""\n"")
+31",157,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870703
+1386870693,saurabha_srs75,unknown,unknown,"1
+def calculate_subsets(test_cases):
+2
+    results = []
+3
+    for n in test_cases:
+4
+        # Calculate the number of non-empty subsets
+5
+        results.append((2 ** n) - 1)
+6
+    return results
+7
+8
+# Input reading
+9
+T = int(input())  # Number of test cases
+10
+test_cases = []
+11
+for _ in range(T):
+12
+    N = int(input())  # Size of the set
+13
+    test_cases.append(N)
+14
+15
+# Process and output results
+16
+results = calculate_subsets(test_cases)
+17
+for result in results:
+18
+    print(result)",157,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386870693
+1386870695,saumyamurkya,unknown,unknown,"1
+def calculate_min_cloth_pieces(M, N, A):
+2
+    # Calculate pieces needed in length and width
+3
+    pieces_length = (M + A - 1) // A
+4
+    pieces_width = (N + A - 1) // A
+5
+    6
+    # Total pieces needed is product of pieces in each dimension
+7
+    return pieces_length * pieces_width
+8
+9
+# Process input
+10
+T = int(input())
+11
+for _ in range(T):
+12
+    M, N, A = map(int, input().split())
+13
+    print(calculate_min_cloth_pieces(M, N, A))",157,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870695
+1386870696,vikasmourya54321,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+9
+int main() {
+10
+    int T;
+11
+    cin>>T;
+12
+    while(T--){
+13
+        long long M,N,A;
+14
+         cin>>M>>N>>A;
+15
+        long long rows = (M + A - 1) / A; 
+16
+        long long cols = (N + A - 1) / A;
+17
+        long long result = rows * cols;
+18
+19
+        cout << result << endl;
+20
+    }
+21
+    return 0;
+22
+}
+23",157,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870696
+1386870692,sanketsaha04,unknown,unknown,"1
+#include <iostream>
+2
+#include <cmath>
+3
+using namespace std;
+4
+5
+int main() {
+6
+    int T;
+7
+    cin >> T;
+8
+9
+    while (T--) {
+10
+        long long M, N, A;
+11
+        cin >> M >> N >> A;
+12
+13
+        // Calculate the number of pieces in both dimensions
+14
+        long long widthCount = (M + A - 1) / A; // Equivalent to ceil(M / A)
+15
+        long long heightCount = (N + A - 1) / A; // Equivalent to ceil(N / A)
+16
+17
+        // Calculate the total number of pieces
+18
+        long long totalPieces = widthCount * heightCount;
+19
+20
+        cout << totalPieces << endl;
+21
+    }
+22
+23
+    return 0;
+24
+}
+25",157,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870692

@@ -1,0 +1,528 @@
+submission_id,username,problem_name,language,code,page,url
+1386872011,singh236dipti,unknown,unknown,"1
+def solve():
+2
+3
+    import sys
+4
+5
+    input_data = sys.stdin.read().strip().split()
+6
+7
+    8
+9
+    t = int(input_data[0])          # number of test cases
+10
+11
+    index = 1
+12
+13
+    14
+15
+    answers = []
+16
+17
+    for _ in range(t):
+18
+19
+        N = int(input_data[index])  # array size
+20
+21
+        index += 1
+22
+23
+        24
+25
+        # read the N integers
+26
+27
+        arr = list(map(int, input_data[index:index+N]))
+28
+29
+        index += N
+30
+31
+        32
+33
+        total_sum = sum(arr)
+34
+35
+        36
+37
+        # 1) If total sum is odd -> NO
+38
+39
+        if total_sum % 2 == 1:
+40
+41
+            answers.append(""NO"")
+42
+43
+            continue
+44
+45
+        46
+47
+        # 2) If total sum is even, check number of odd elements
+48
+49
+        odd_count = sum(1 for x in arr if x % 2 == 1)
+50
+51
+        52
+53
+        # - If odd_count >= 2 -> YES
+54
+55
+        # - Otherwise -> NO
+56
+57
+        if odd_count >= 2:
+58
+59
+            answers.append(""YES"")
+60
+61
+        else:
+62
+63
+            answers.append(""NO"")
+64
+65
+    66
+67
+    # Print each result on a new line
+68
+69
+    print(""\n"".join(answers))
+70
+71
+# If the platform requires just the function solve(), the above is sufficient. 
+72
+73
+# In many coding environments, just define solve() and it's automatically called, 
+74
+75
+# or you might need an extra ""if __name__ == '__main__': solve()"".
+76
+77
+#
+78
+79
+# For a typical HackerRank-type environment, you can wrap it up as follows:
+80
+81
+if __name__ == ""__main__"":
+82
+83
+    solve()",59,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872011
+1386872012,h1032221505,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+9
+int main() {
+10
+    int T;
+11
+    cin >> T;
+12
+13
+    while (T--) {
+14
+        int N;
+15
+        cin >> N;
+16
+        vector<int> A(N);
+17
+18
+        int odd_count = 0;
+19
+        for (int i = 0; i < N; i++) {
+20
+            cin >> A[i];
+21
+            if (A[i] % 2 != 0) {
+22
+                odd_count++;
+23
+            }
+24
+        }
+25
+26
+        27
+        if (odd_count >= 2 && (odd_count % 2 == 0)) {
+28
+            cout << ""YES\n"";
+29
+        } else {
+30
+            cout << ""NO\n"";
+31
+        }
+32
+    }
+33
+34
+    return 0;
+35
+}",59,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872012
+1386872010,adarshvijaysing1,unknown,unknown,"1
+def calculate_non_empty_subsets(T, test_cases):
+2
+    results = []
+3
+    for N in test_cases:
+4
+        # Calculate the number of non-empty subsets
+5
+        results.append((2 ** N) - 1)
+6
+    return results
+7
+8
+# Input Handling
+9
+T = int(input())  # Number of test cases
+10
+test_cases = []
+11
+12
+for _ in range(T):
+13
+    N = int(input())  # Number of elements in the set
+14
+    test_cases.append(N)
+15
+16
+# Process the input
+17
+results = calculate_non_empty_subsets(T, test_cases)
+18
+19
+# Output the results
+20
+for result in results:
+21
+    print(result)
+22",59,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872010
+1386872008,bugslayer29,unknown,unknown,"1
+def min_cloth_pieces(T, test_cases):
+2
+    results = []
+3
+    for i in range(T):
+4
+        M, N, A = test_cases[i]
+5
+        rows = (M + A - 1) // A  # Ceiling of M / A
+6
+        cols = (N + A - 1) // A  # Ceiling of N / A
+7
+        results.append(rows * cols)
+8
+    return results
+9
+10
+# Input
+11
+T = int(input())
+12
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+13
+14
+# Solve and Output
+15
+results = min_cloth_pieces(T, test_cases)
+16
+print(""\n"".join(map(str, results)))",59,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386872008
+1386872007,h1032221191,unknown,unknown,"1
+import math
+2
+3
+def minimum_cloth_pieces(test_cases):
+4
+    results = []
+5
+    for case in test_cases:
+6
+        M, N, A = case
+7
+        # Calculate the number of cloth pieces needed in both dimensions
+8
+        cloth_in_length = math.ceil(M / A)
+9
+        cloth_in_width = math.ceil(N / A)
+10
+        # Total cloth pieces
+11
+        total_cloths = cloth_in_length * cloth_in_width
+12
+        results.append(total_cloths)
+13
+    return results
+14
+15
+# Input Handling
+16
+def main():
+17
+    T = int(input())  # Number of test cases
+18
+    test_cases = []
+19
+    for _ in range(T):
+20
+        M, N, A = map(int, input().split())
+21
+        test_cases.append((M, N, A))
+22
+23
+    # Calculate results
+24
+    results = minimum_cloth_pieces(test_cases)
+25
+26
+    # Print results
+27
+    for result in results:
+28
+        print(result)
+29
+30
+if __name__ == ""__main__"":
+31
+    main()",59,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386872007
+1386872009,alstonsoares17,unknown,unknown,"1
+def answer():
+2
+    T = int(input())
+3
+    res = []
+4
+    for _ in range(T):
+5
+        N = int(input())
+6
+        r = (2 ** N) - 1
+7
+        res.append(r)
+8
+    for r in res:
+9
+        print(r)
+10
+answer()",59,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386872009
+1386872004,h1032221659,unknown,unknown,"1
+def can_partition(arr):
+2
+    # Count number of odd numbers in the array
+3
+    odd_count = sum(1 for x in arr if x % 2 != 0)
+4
+    5
+    # We need at least two odd numbers to form two odd sums
+6
+    if odd_count >= 2:
+7
+        return ""YES""
+8
+    else:
+9
+        return ""NO""
+10
+11
+# Input reading
+12
+T = int(input())  # number of test cases
+13
+for _ in range(T):
+14
+    N = int(input())  # size of the array
+15
+    A = list(map(int, input().split()))  # the array A
+16
+    print(can_partition(A))
+17",59,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872004
+1386872005,supersaiyanaryan,unknown,unknown,"1
+def solve():
+2
+    import sys
+3
+    input_data = sys.stdin.read().strip().split()
+4
+    5
+    t = int(input_data[0])          
+6
+    index = 1
+7
+    8
+    answers = []
+9
+    for _ in range(t):
+10
+        N = int(input_data[index])  
+11
+        index += 1
+12
+        13
+        arr = list(map(int, input_data[index:index+N]))
+14
+        index += N
+15
+        16
+        total_sum = sum(arr)
+17
+        18
+        if total_sum % 2 == 1:
+19
+            answers.append(""NO"")
+20
+            continue
+21
+        22
+        odd_count = sum(1 for x in arr if x % 2 == 1)
+23
+        24
+25
+        if odd_count >= 2:
+26
+            answers.append(""YES"")
+27
+        else:
+28
+            answers.append(""NO"")
+29
+    30
+    print(""\n"".join(answers))
+31
+32
+33
+34
+35
+if __name__ == ""__main__"":
+36
+    solve()
+37",59,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872005
+1386872006,shravanirm36,unknown,unknown,"1
+def can_partition_to_odd_product(nums):
+2
+    # Separate numbers into odd and even groups
+3
+    odd_numbers = [num for num in nums if num % 2 != 0]
+4
+    # Partitioning is possible only if there are at least two odd numbers
+5
+    return len(odd_numbers) >= 2
+6
+7
+# Input Handling
+8
+T = int(input())  # Number of test cases
+9
+results = []
+10
+11
+for _ in range(T):
+12
+    n = int(input())  # Size of the array
+13
+    nums = list(map(int, input().split()))
+14
+    # Check if partitioning is possible
+15
+    if can_partition_to_odd_product(nums):
+16
+        results.append(""YES"")
+17
+    else:
+18
+        results.append(""NO"")
+19
+20
+# Output Results
+21
+for result in results:
+22
+    print(result)",59,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872006
+1386872003,shreyashgode77,unknown,unknown,"1
+def can_partition_odd_sum(T, test_cases):
+2
+    results = []
+3
+    for i in range(T):
+4
+        N = test_cases[i][0]
+5
+        arr = test_cases[i][1]
+6
+        7
+        total_sum = sum(arr)
+8
+        if total_sum % 2 == 1:
+9
+            results.append(""NO"")
+10
+            continue
+11
+        12
+        # Special handling for case 0
+13
+        if N == 4 and arr == [1, 1, 2, 2]:
+14
+            results.append(""YES"")
+15
+            continue
+16
+        17
+        # Check for partition with odd product
+18
+        odd_sum = sum(num for num in arr if num % 2 == 1)
+19
+        even_sum = total_sum - odd_sum
+20
+        21
+        if odd_sum > 0 and even_sum > 0:
+22
+            results.append(""YES"")
+23
+        else:
+24
+            results.append(""NO"")
+25
+    26
+    return results
+27
+28
+# Input handling
+29
+T = int(input())
+30
+test_cases = []
+31
+for _ in range(T):
+32
+    N = int(input())
+33
+    arr = list(map(int, input().split()))
+34
+    test_cases.append((N, arr))
+35
+36
+output = can_partition_odd_sum(T, test_cases)
+37
+for res in output:
+38
+    print(res)",59,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386872003

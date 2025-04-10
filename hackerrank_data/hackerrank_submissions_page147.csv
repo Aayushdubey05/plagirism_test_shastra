@@ -1,0 +1,385 @@
+submission_id,username,problem_name,language,code,page,url
+1386870855,shivam_r_mishra1,unknown,unknown,"1
+def calculate_subsets():
+2
+    t = int(input())
+3
+    output = []
+4
+    5
+    for _ in range(t):
+6
+        n = int(input())
+7
+        output.append((1 << n) - 1)
+8
+    9
+    for res in output:
+10
+        print(res)
+11
+12
+calculate_subsets()
+13",147,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386870855
+1386870856,h1032220619,unknown,unknown,"1
+import math
+2
+3
+# Function to calculate the minimum number of cloth pieces needed
+4
+def minimum_cloth_pieces(T, test_cases):
+5
+    results = []
+6
+    for case in test_cases:
+7
+        M, N, A = case
+8
+        # Calculate the number of pieces needed for length and width
+9
+        num_pieces_length = math.ceil(M / A)
+10
+        num_pieces_width = math.ceil(N / A)
+11
+        # Total number of pieces is the product of pieces along length and width
+12
+        total_pieces = num_pieces_length * num_pieces_width
+13
+        results.append(total_pieces)
+14
+    return results
+15
+16
+# Input reading
+17
+T = int(input())  # Number of test cases
+18
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+19
+20
+# Process and output results
+21
+results = minimum_cloth_pieces(T, test_cases)
+22
+for result in results:
+23
+    print(result)",147,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870856
+1386870859,tanishrai,unknown,unknown,"1
+import java.util.*;
+2
+3
+public class Solution {
+4
+    public static void main(String[] args) {
+5
+        Scanner sc = new Scanner(System.in);
+6
+7
+        int T = sc.nextInt();
+8
+9
+        while (T-- > 0) {
+10
+            int N = sc.nextInt();
+11
+12
+            int result = (1 << N) - 1; 
+13
+14
+            System.out.println(result);
+15
+        }
+16
+17
+        sc.close();
+18
+    }
+19
+}",147,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386870859
+1386870852,tanishqraj2112,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+int main() {
+9
+    int T;
+10
+    cin >> T;
+11
+    while(T--) {
+12
+        int N;
+13
+        cin >> N;
+14
+        cout << (1LL << N) - 1 << endl;
+15
+    }
+16
+    return 0;
+17
+}
+18",147,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386870852
+1386870853,h1032221690,unknown,unknown,"1
+def calculate_min_cloth_pieces(M, N, A):
+2
+    # Calculate pieces needed in length and width
+3
+    pieces_length = (M + A - 1) // A
+4
+    pieces_width = (N + A - 1) // A
+5
+    6
+    # Total pieces needed is product of pieces in each dimension
+7
+    return pieces_length * pieces_width
+8
+9
+# Process input
+10
+T = int(input())
+11
+for _ in range(T):
+12
+    M, N, A = map(int, input().split())
+13
+    print(calculate_min_cloth_pieces(M, N, A))",147,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870853
+1386870854,risshabh022,unknown,unknown,"1
+def can_partition_to_odd_product(test_cases):
+2
+    results = []
+3
+    for case in test_cases:
+4
+        N, A = case
+5
+        # Count odd and even numbers in the array
+6
+        odd_count = sum(1 for x in A if x % 2 != 0)
+7
+        even_count = N - odd_count
+8
+9
+        # To get an odd product, we need at least one odd number in each subset
+10
+        if odd_count >= 2:  # We need at least two odd numbers to split between S1 and S2
+11
+            results.append(""YES"")
+12
+        else:
+13
+            results.append(""NO"")
+14
+    return results
+15
+16
+# Input processing
+17
+T = int(input())
+18
+test_cases = []
+19
+for _ in range(T):
+20
+    N = int(input())
+21
+    A = list(map(int, input().split()))
+22
+    test_cases.append((N, A))
+23
+24
+# Calculate and output results
+25
+results = can_partition_to_odd_product(test_cases)
+26
+for result in results:
+27
+    print(result)
+28",147,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870854
+1386870846,jaypsingh04,unknown,unknown,"1
+def squarescaping(inputs):
+2
+    results = []
+3
+    for case in inputs:
+4
+        M, N, A = case
+5
+        6
+        rows = (M + A - 1) // A
+7
+        cols = (N + A - 1) // A
+8
+        results.append(rows * cols)
+9
+    return results
+10
+11
+T = int(input())
+12
+inputs = [tuple(map(int, input().split())) for _ in range(T)]
+13
+14
+results = squarescaping(inputs)
+15
+16
+for result in results:
+17
+    print(result)",147,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870846
+1386870848,abhijeetjha913,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+9
+int main() {
+10
+    int T;
+11
+    cin >> T;  // Read number of test cases
+12
+    13
+    while (T--) {
+14
+        int N;
+15
+        cin >> N;  // Read the number of integers in the array
+16
+        vector<int> A(N);
+17
+        18
+        int oddCount = 0;
+19
+        20
+        // Read the array and count the number of odd elements
+21
+        for (int i = 0; i < N; ++i) {
+22
+            cin >> A[i];
+23
+            if (A[i] % 2 != 0) {
+24
+                oddCount++;
+25
+            }
+26
+        }
+27
+        28
+        // If there are at least two odd numbers, it's possible to partition
+29
+        if (oddCount >= 2) {
+30
+            cout << ""YES"" << endl;
+31
+        } else {
+32
+            cout << ""NO"" << endl;
+33
+        }
+34
+    }
+35
+    36
+    return 0;
+37
+}
+38",147,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870848
+1386870850,aishwaryajagdal1,unknown,unknown,"1
+import math
+2
+3
+# Function to calculate the minimum number of square cloth pieces
+4
+def minimum_cloth_pieces(T, test_cases):
+5
+    results = []
+6
+    for case in test_cases:
+7
+        M, N, A = case
+8
+        # Calculate the number of cloth pieces required along the length and width
+9
+        num_length = math.ceil(M / A)
+10
+        num_width = math.ceil(N / A)
+11
+        # Total number of cloth pieces
+12
+        results.append(num_length * num_width)
+13
+    return results
+14
+15
+# Input
+16
+T = int(input())  # Number of test cases
+17
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+18
+19
+# Output results
+20
+results = minimum_cloth_pieces(T, test_cases)
+21
+for res in results:
+22
+    print(res)",147,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870850
+1386870845,h1032221052,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+int main() {
+9
+    int T;
+10
+    cin >> T;
+11
+    while (T--) {
+12
+        long long len, with, dim;
+13
+        cin >> len >> with >> dim;
+14
+        long long r = (len + dim - 1) / dim;
+15
+        long long c = (with + dim - 1) / dim;
+16
+        cout << r * c << endl;
+17
+    }
+18
+    return 0;
+19
+}
+20",147,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870845

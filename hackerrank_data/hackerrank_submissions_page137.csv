@@ -1,0 +1,451 @@
+submission_id,username,problem_name,language,code,page,url
+1386870995,h1032221032,unknown,unknown,"1
+def calculate_min_cloth_pieces(M,N,A):
+2
+    pieces_length = (M + A - 1)//A
+3
+    pieces_width = (N + A -1)//A
+4
+    5
+    return pieces_length*pieces_width
+6
+7
+T = int(input())
+8
+for _ in range(T):
+9
+    M,N,A = map(int,input().split())
+10
+    print(calculate_min_cloth_pieces(M,N,A))
+11",137,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870995
+1386870996,ishakbtech,unknown,unknown,"1
+def cal_min_cloth_piece(M,N,A):
+2
+    pieces_length = (M+A-1)//A
+3
+    pieces_width = (N+A-1)//A
+4
+    return pieces_length*pieces_width
+5
+T= int(input())
+6
+for _ in range(T):
+7
+    M,N,A = map(int, input().split())
+8
+    print(cal_min_cloth_piece(M,N,A))",137,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870996
+1386870997,h1032221768,unknown,unknown,"1
+def can_partition_odd_product(T, test_cases):
+2
+    results = []
+3
+    for t in range(T):
+4
+        N, A = test_cases[t]
+5
+        # Count the number of odd elements
+6
+        odd_count = 0
+7
+        for x in A:
+8
+            if x % 2 != 0:
+9
+                odd_count += 1
+10
+        # Check if we have at least two odd numbers
+11
+        if odd_count >= 2:
+12
+            results.append(""YES"")
+13
+        else:
+14
+            results.append(""NO"")
+15
+    return results
+16
+17
+# Input reading
+18
+import sys
+19
+input = sys.stdin.read
+20
+data = input().split()
+21
+22
+T = int(data[0])  # Number of test cases
+23
+test_cases = []
+24
+idx = 1
+25
+26
+for _ in range(T):
+27
+    N = int(data[idx])  # Number of elements in the array
+28
+    idx += 1
+29
+    A = list(map(int, data[idx:idx + N]))
+30
+    idx += N
+31
+    test_cases.append((N, A))
+32
+33
+# Process test cases
+34
+results = can_partition_odd_product(T, test_cases)
+35
+36
+# Output results
+37
+sys.stdout.write(""\n"".join(results) + ""\n"")
+38",137,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870997
+1386870992,tarang_rathod,unknown,unknown,"1
+t = int(input().strip())
+2
+for _ in range(t):
+3
+    n = int(input().strip())
+4
+    # Number of non-empty subsets = 2^n - 1
+5
+    print((1 << n) - 1)
+6
+7",137,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/subsets-challenge/submissions/code/1386870992
+1386870993,kerissapatel,unknown,unknown,"1
+import sys
+2
+input = sys.stdin.read
+3
+4
+def can_partition(test_cases):
+5
+    results = []
+6
+    for n, arr in test_cases:
+7
+        odd_count = sum(1 for x in arr if x % 2 != 0)
+8
+        if odd_count >= 2:
+9
+            results.append(""YES"")
+10
+        else:
+11
+            results.append(""NO"")
+12
+    return results
+13
+14
+# Efficient Input Reading
+15
+data = input().split()
+16
+T = int(data[0])
+17
+test_cases = []
+18
+idx = 1
+19
+20
+for _ in range(T):
+21
+    N = int(data[idx])
+22
+    idx += 1
+23
+    arr = list(map(int, data[idx:idx + N]))
+24
+    idx += N
+25
+    test_cases.append((N, arr))
+26
+27
+# Process each test case
+28
+results = can_partition(test_cases)
+29
+30
+# Output results
+31
+sys.stdout.write(""\n"".join(results) + ""\n"")
+32",137,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870993
+1386870994,h1032220856,unknown,unknown,"1
+def can_partition_with_odd_product(T, test_cases):
+2
+    results = []
+3
+    4
+    for i in range(T):
+5
+        N, A = test_cases[i]
+6
+        7
+        # Count the number of odd numbers in A
+8
+        odd_count = sum(1 for x in A if x % 2 != 0)
+9
+        10
+        # If there are at least two odd numbers, the answer is ""YES""
+11
+        if odd_count >= 2:
+12
+            results.append(""YES"")
+13
+        else:
+14
+            results.append(""NO"")
+15
+    16
+    return results
+17
+18
+# Input handling
+19
+T = int(input())  # Number of test cases
+20
+test_cases = []
+21
+22
+for _ in range(T):
+23
+    N = int(input())  # Size of the array
+24
+    A = list(map(int, input().split()))  # The array itself
+25
+    test_cases.append((N, A))
+26
+27
+# Get the results for each test case
+28
+results = can_partition_with_odd_product(T, test_cases)
+29
+30
+# Output the results
+31
+for result in results:
+32
+    print(result)
+33
+34",137,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870994
+1386870989,tanishqraj2112,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+bool solve(vector<int>& A) {
+9
+    int n = A.size();
+10
+    for(int mask = 1; mask < (1 << n) - 1; mask++) {
+11
+        int sum1 = 0, sum2 = 0;
+12
+        for(int i = 0; i < n; i++) {
+13
+            if(mask & (1 << i)) sum1 += A[i];
+14
+            else sum2 += A[i];
+15
+        }
+16
+        if((sum1 % 2 == 1) && (sum2 % 2 == 1)) return true;
+17
+    }
+18
+    return false;
+19
+}
+20
+21
+int main() {
+22
+    int T;
+23
+    cin >> T;
+24
+    while(T--) {
+25
+        int N;
+26
+        cin >> N;
+27
+        vector<int> A(N);
+28
+        for(int i = 0; i < N; i++) cin >> A[i];
+29
+        cout << (solve(A) ? ""YES"" : ""NO"") << endl;
+30
+    }
+31
+    return 0;
+32
+}",137,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870989
+1386870990,h1032221611,unknown,unknown,"1
+#include <iostream>
+2
+#include <cmath>
+3
+using namespace std;
+4
+5
+int main() {
+6
+    int T;
+7
+    cin >> T;
+8
+9
+    while (T--) {
+10
+        long long M, N, A;
+11
+        cin >> M >> N >> A;
+12
+13
+        long long piecesInLength = (M + A - 1) / A;
+14
+        long long piecesInWidth = (N + A - 1) / A;
+15
+16
+        long long totalPieces = piecesInLength * piecesInWidth;
+17
+        cout << totalPieces << endl;
+18
+    }
+19
+20
+    return 0;
+21
+}",137,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870990
+1386870991,sp488830,unknown,unknown,"1
+#include <cmath>
+2
+#include <cstdio>
+3
+#include <vector>
+4
+#include <iostream>
+5
+#include <algorithm>
+6
+using namespace std;
+7
+8
+9
+10
+int main() {
+11
+    int T;
+12
+    cin >> T;
+13
+    14
+    while (T--) {
+15
+        int N;
+16
+        cin >> N;
+17
+        vector<int> arr(N);
+18
+        19
+        for (int i = 0; i < N; ++i) {
+20
+            cin >> arr[i];
+21
+        }
+22
+        23
+        int odd_count = 0;
+24
+        int total_sum = 0;
+25
+        26
+        for (int i = 0; i < N; ++i) {
+27
+            total_sum += arr[i];
+28
+            if (arr[i] % 2 != 0) {
+29
+                odd_count++;
+30
+            }
+31
+        }
+32
+        33
+        if (total_sum % 2 != 0) {
+34
+            cout << ""NO"" << endl;
+35
+        } else {
+36
+            if (odd_count >= 2) {
+37
+                cout << ""YES"" << endl;
+38
+            } else {
+39
+                cout << ""NO"" << endl;
+40
+            }
+41
+        }
+42
+    }
+43
+    44
+    return 0;
+45
+}
+46",137,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/partitioning-for-odd-multiplication/submissions/code/1386870991
+1386870988,riddhijoshi5900,unknown,unknown,"1
+def min_cloth_pieces(t_cases):
+2
+    results = []
+3
+    for case in t_cases:
+4
+        M, N, A = case
+5
+        length = (M + A - 1) // A
+6
+        width = (N + A - 1) // A
+7
+        total_pieces = length * width
+8
+        results.append(total_pieces)
+9
+    return results
+10
+11
+T = int(input())
+12
+t_cases = []
+13
+for _ in range(T):
+14
+    M, N, A = map(int, input().split())
+15
+    t_cases.append((M, N, A))
+16
+17
+results = min_cloth_pieces(t_cases)
+18
+for result in results:
+19
+    print(result)",137,https://www.hackerrank.com/contests/tcet-shastra-coding-contest-1-a/challenges/squarescaping/submissions/code/1386870988
